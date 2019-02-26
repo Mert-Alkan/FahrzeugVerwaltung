@@ -12,7 +12,7 @@ namespace Fahrezug
 {
     public partial class Form2 : Form
     {
-        public Fahrzeug Fahrzeug { get; protected set; }
+        public Fahrzeug Fahrzeug1 { get; protected set; }
         public Form2()
         {
             InitializeComponent();
@@ -32,30 +32,35 @@ namespace Fahrezug
         {
                 if (Hersteller.Text != "" && FahrzeugTextBox.Text == "PKW" && KennzeichenTextBox.Text != "" && AnschaffungspreisTextBox.Text != "" && ErstzulassungTextBox.Text != "")
                 {
-                    Fahrzeug = new PKW();
-                    Fahrzeug.MeinKennzeichen = KennzeichenTextBox.Text;
-                    Fahrzeug.MeinModell = ModellTextBox.Text;
-                    Fahrzeug.MeinHersteller = HerstellerTextBox.Text;
-                    Fahrzeug.MeineErstzulassung = ErstzulassungTextBox.Text;
-                    Fahrzeug.MeinFahrzeug = FahrzeugTextBox.Text;
+                    Fahrzeug1 = new PKW();
+                    Fahrzeug1.MeinKennzeichen = KennzeichenTextBox.Text;
+                    Fahrzeug1.MeinModell = ModellTextBox.Text;
+                    Fahrzeug1.MeinHersteller = HerstellerTextBox.Text;
+                    Fahrzeug1.MeineErstzulassung = ErstzulassungTextBox.Text;
+                    Fahrzeug1.MeinFahrzeug = FahrzeugTextBox.Text;
                 }
                 else if (FahrzeugTextBox.Text=="LKW")
                 {
-                    Fahrzeug = new LKW();
-                    Fahrzeug.MeinKennzeichen = KennzeichenTextBox.Text;
-                    Fahrzeug.MeinModell = ModellTextBox.Text;
-                    Fahrzeug.MeinHersteller = HerstellerTextBox.Text;
-                    Fahrzeug.MeineErstzulassung = ErstzulassungTextBox.Text;
-                    Fahrzeug.MeinFahrzeug = FahrzeugTextBox.Text;
+                    Fahrzeug1 = new LKW();
+                    Fahrzeug1.MeinKennzeichen = KennzeichenTextBox.Text;
+                    Fahrzeug1.MeinModell = ModellTextBox.Text;
+                    Fahrzeug1.MeinHersteller = HerstellerTextBox.Text;
+                    Fahrzeug1.MeineErstzulassung = ErstzulassungTextBox.Text;
+                    Fahrzeug1.MeinFahrzeug = FahrzeugTextBox.Text;
                 }
                 else if (FahrzeugTextBox.Text=="Motorrräder")
                 {
-                Fahrzeug = new Motorräder();
-                    Fahrzeug.MeinKennzeichen = KennzeichenTextBox.Text;
-                    Fahrzeug.MeinModell = ModellTextBox.Text;
-                    Fahrzeug.MeinHersteller = HerstellerTextBox.Text;
-                    Fahrzeug.MeineErstzulassung = ErstzulassungTextBox.Text;
-                    Fahrzeug.MeinFahrzeug = FahrzeugTextBox.Text;
+                Fahrzeug1 = new Motorräder();
+                    Fahrzeug1.MeinKennzeichen = KennzeichenTextBox.Text;
+                    Fahrzeug1.MeinModell = ModellTextBox.Text;
+                    Fahrzeug1.MeinHersteller = HerstellerTextBox.Text;
+                    Fahrzeug1.MeineErstzulassung = ErstzulassungTextBox.Text;
+                    Fahrzeug1.MeinFahrzeug = FahrzeugTextBox.Text;
+                }
+                else
+                {
+                MessageBox.Show("Sie müssen alle Felder ausfüllen, wiederholen Sie den Vorgang");
+                return;
                 }
                 
                 this.Close();

@@ -13,9 +13,8 @@ namespace Fahrezug
         protected string Kennzeichen;
         protected string Erstzulassung;
         protected string fahren;
-        
 
-        
+        public static int Length { get; internal set; }
 
         public string MeinHersteller
         {

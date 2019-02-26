@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Fahrezug
 {
@@ -15,7 +9,8 @@ namespace Fahrezug
         public Form1()
         {
             InitializeComponent();
-            FahrzeugListe.DisplayMember = "MeinKennzeichen";
+            FahrzeugListe.DisplayMember = "MeinKennzeichen";  //Diese Eigenschaft MeinKennzeichen soll in der fahrzeug liste angezigt werden
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -24,7 +19,12 @@ namespace Fahrezug
             using (Form2 form2 = new Form2())
             {
                 form2.ShowDialog();
-                FahrzeugListe.Items.Add(form2.Fahrzeug); // Speichert die Daten Aus Fahrezug in Fahrzeugliste
+                if(form2.Fahrzeug1 == null)  //Fehler wurde behoben damit nicht nichts gespeichert werden kann in Fahrzeug1
+                {
+                    MessageBox.Show("Sie sind wieder im Hauptmenü");
+                }
+                else 
+                FahrzeugListe.Items.Add(form2.Fahrzeug1); // Speichert die Daten Aus Fahrzeug1 in Fahrzeugliste
             }
                     
         }
@@ -33,6 +33,22 @@ namespace Fahrezug
         {
 
         }
-      
+
+        private void LöschButton_Click(object sender, EventArgs e)
+        {
+            FahrzeugListe.Items.Remove(FahrzeugListe.SelectedItem);
+
+        }
+
+        private void SpeicherButton_Click(object sender, EventArgs e)
+        {
+         //   string sFahrzeugDatei = @"..\..\Fahrzeug.txt"; //Speichern der Fahrzeuge!
+           // string sParkplatzDatei = @"..\..\Parkplatz.txt";     //Speichern der Parkplätze! 
+
+          //  StreamWriter swFDaten = new StreamWriter(sFahrzeugDatei);
+         //   StreamWriter swPDaten = new StreamWriter(sParkplatzDatei);
+
+       
+        }
     }
 }
