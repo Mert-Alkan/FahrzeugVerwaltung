@@ -12,10 +12,12 @@ namespace Fahrezug
 {
     public partial class Form2 : Form
     {
+        public Fahrzeug Fahrzeug { get; protected set; }
         public Form2()
         {
             InitializeComponent();
-
+           
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -24,24 +26,39 @@ namespace Fahrezug
             
         }
 
-        //Hinzufügen in die Liste 
+        // Es wird Programmiert was passiert wenn man auf den Hinzufüge Button drückt
 
         private void Hinzufügen_Click(object sender, EventArgs e)
         {
-            if (Hersteller.Text != "" && FahrzeugTextBox.Text != "PKW" && KennzeichenTextBox.Text != "" && AnschaffungspreisTextBox.Text != "" && ErstzulassungTextBox.Text!="")
-            {
-                Fahrzeug fahrzeug1 = new PKW();
-
-                fahrzeug1.MeinKennzeichen    = Convert.ToInt32(KennzeichenTextBox.Text);
-                fahrzeug1.MeinModell         = ModellTextBox.Text;
-                fahrzeug1.MeinHersteller     = HerstellerTextBox.Text;
-                fahrzeug1.MeineErstzulassung = ErstzulassungTextBox.Text;
-                fahrzeug1.MeinFahrzeug       = FahrzeugTextBox.Text;
-
+                if (Hersteller.Text != "" && FahrzeugTextBox.Text == "PKW" && KennzeichenTextBox.Text != "" && AnschaffungspreisTextBox.Text != "" && ErstzulassungTextBox.Text != "")
+                {
+                    Fahrzeug = new PKW();
+                    Fahrzeug.MeinKennzeichen = KennzeichenTextBox.Text;
+                    Fahrzeug.MeinModell = ModellTextBox.Text;
+                    Fahrzeug.MeinHersteller = HerstellerTextBox.Text;
+                    Fahrzeug.MeineErstzulassung = ErstzulassungTextBox.Text;
+                    Fahrzeug.MeinFahrzeug = FahrzeugTextBox.Text;
+                }
+                else if (FahrzeugTextBox.Text=="LKW")
+                {
+                    Fahrzeug = new LKW();
+                    Fahrzeug.MeinKennzeichen = KennzeichenTextBox.Text;
+                    Fahrzeug.MeinModell = ModellTextBox.Text;
+                    Fahrzeug.MeinHersteller = HerstellerTextBox.Text;
+                    Fahrzeug.MeineErstzulassung = ErstzulassungTextBox.Text;
+                    Fahrzeug.MeinFahrzeug = FahrzeugTextBox.Text;
+                }
+                else if (FahrzeugTextBox.Text=="Motorrräder")
+                {
+                Fahrzeug = new Motorräder();
+                    Fahrzeug.MeinKennzeichen = KennzeichenTextBox.Text;
+                    Fahrzeug.MeinModell = ModellTextBox.Text;
+                    Fahrzeug.MeinHersteller = HerstellerTextBox.Text;
+                    Fahrzeug.MeineErstzulassung = ErstzulassungTextBox.Text;
+                    Fahrzeug.MeinFahrzeug = FahrzeugTextBox.Text;
+                }
                 
                 this.Close();
-            }
-
         }
     }
 }

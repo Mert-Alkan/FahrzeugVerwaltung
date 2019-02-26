@@ -8,56 +8,58 @@ namespace Fahrezug
     public class Fahrzeug
     {
         protected string Hersteller;
-        protected int Anschaffungspreis;
+        protected int    Anschaffungspreis;
         protected string Modell;
-        protected int Kennzeichen;
+        protected string Kennzeichen;
         protected string Erstzulassung;
+        protected string fahren;
+        
 
         
 
         public string MeinHersteller
         {
-            get { return MeinHersteller ; }
-            set { MeinHersteller = value; }
+            get { return Hersteller ; }
+            set { Hersteller = value; }
         }
 
         
 
         public int MeinAnschaffungspreis
         {
-            get { return MeinAnschaffungspreis ; }
-            set {MeinAnschaffungspreis  = value; }
+            get { return Anschaffungspreis ; }
+            set {Anschaffungspreis  = value; }
         }
 
         
 
         public string  MeinModell
         {
-            get { return MeinModell; }
-            set { MeinModell = value; }
+            get { return Modell; }
+            set { Modell = value; }
         }
 
 
-        public  int MeinKennzeichen
+        public  string MeinKennzeichen
         {
-            get { return MeinKennzeichen; }
-            set { MeinKennzeichen = value; }
+            get { return Kennzeichen; }
+            set { Kennzeichen = value; }
         }
 
          
 
         public  string MeineErstzulassung
         {
-            get { return MeineErstzulassung; }
-            set { MeineErstzulassung = value;}
+            get { return Erstzulassung; }
+            set { Erstzulassung = value;}
         }
 
 
 
         public  string MeinFahrzeug
         {
-            get { return MeinFahrzeug; }
-            set { MeinFahrzeug= value; }
+            get { return fahren; }
+            set { fahren= value; }
         }
        
                 

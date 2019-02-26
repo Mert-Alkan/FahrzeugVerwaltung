@@ -39,9 +39,9 @@
             this.HerstellerTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Hinzufügen = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.ErstzulassungTextBox = new System.Windows.Forms.TextBox();
+            this.Hinzufügen = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,7 +89,7 @@
             // 
             this.AnschaffungspreisTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AnschaffungspreisTextBox.Location = new System.Drawing.Point(266, 235);
-            this.AnschaffungspreisTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AnschaffungspreisTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.AnschaffungspreisTextBox.Name = "AnschaffungspreisTextBox";
             this.AnschaffungspreisTextBox.Size = new System.Drawing.Size(93, 20);
             this.AnschaffungspreisTextBox.TabIndex = 1;
@@ -98,7 +98,7 @@
             // 
             this.KennzeichenTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.KennzeichenTextBox.Location = new System.Drawing.Point(266, 184);
-            this.KennzeichenTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.KennzeichenTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.KennzeichenTextBox.Name = "KennzeichenTextBox";
             this.KennzeichenTextBox.Size = new System.Drawing.Size(94, 20);
             this.KennzeichenTextBox.TabIndex = 1;
@@ -107,7 +107,7 @@
             // 
             this.ModellTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ModellTextBox.Location = new System.Drawing.Point(266, 134);
-            this.ModellTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ModellTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.ModellTextBox.Name = "ModellTextBox";
             this.ModellTextBox.Size = new System.Drawing.Size(94, 20);
             this.ModellTextBox.TabIndex = 1;
@@ -136,6 +136,7 @@
             // FahrzeugTextBox
             // 
             this.FahrzeugTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FahrzeugTextBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FahrzeugTextBox.FormattingEnabled = true;
             this.FahrzeugTextBox.Items.AddRange(new object[] {
             "PKW",
@@ -151,7 +152,7 @@
             // 
             this.HerstellerTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.HerstellerTextBox.Location = new System.Drawing.Point(266, 80);
-            this.HerstellerTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HerstellerTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.HerstellerTextBox.Name = "HerstellerTextBox";
             this.HerstellerTextBox.Size = new System.Drawing.Size(94, 20);
             this.HerstellerTextBox.TabIndex = 3;
@@ -178,16 +179,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Kennzeichen";
             // 
-            // Hinzufügen
-            // 
-            this.Hinzufügen.Location = new System.Drawing.Point(413, 395);
-            this.Hinzufügen.Name = "Hinzufügen";
-            this.Hinzufügen.Size = new System.Drawing.Size(75, 23);
-            this.Hinzufügen.TabIndex = 1;
-            this.Hinzufügen.Text = "Hinzufügen";
-            this.Hinzufügen.UseVisualStyleBackColor = true;
-            this.Hinzufügen.Click += new System.EventHandler(this.Hinzufügen_Click);
-            // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -205,6 +196,16 @@
             this.ErstzulassungTextBox.Name = "ErstzulassungTextBox";
             this.ErstzulassungTextBox.Size = new System.Drawing.Size(96, 20);
             this.ErstzulassungTextBox.TabIndex = 7;
+            // 
+            // Hinzufügen
+            // 
+            this.Hinzufügen.Location = new System.Drawing.Point(413, 395);
+            this.Hinzufügen.Name = "Hinzufügen";
+            this.Hinzufügen.Size = new System.Drawing.Size(75, 23);
+            this.Hinzufügen.TabIndex = 1;
+            this.Hinzufügen.Text = "Hinzufügen";
+            this.Hinzufügen.UseVisualStyleBackColor = true;
+            this.Hinzufügen.Click += new System.EventHandler(this.Hinzufügen_Click);
             // 
             // Form2
             // 

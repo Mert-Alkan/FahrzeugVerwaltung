@@ -15,14 +15,16 @@ namespace Fahrezug
         public Form1()
         {
             InitializeComponent();
-            
+            FahrzeugListe.DisplayMember = "MeinKennzeichen";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //ruft Form2 Auf 
             using (Form2 form2 = new Form2())
             {
                 form2.ShowDialog();
+                FahrzeugListe.Items.Add(form2.Fahrzeug); // Speichert die Daten Aus Fahrezug in Fahrzeugliste
             }
                     
         }
