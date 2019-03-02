@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Fahrezug
+namespace Fahrzeug
 {
     public class Motorräder: Fahrzeug
     {
@@ -13,5 +13,14 @@ namespace Fahrezug
         {
             throw new System.NotImplementedException();
         }
+
+
+
+        public int MeineHubraume 
+        {
+            get { return Hubraum; }
+            set { Hubraum = value; }
+        }
+
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Fahrezug
+namespace Fahrzeug
 {
     public partial class Form2 : Form
     {
@@ -16,46 +16,134 @@ namespace Fahrezug
         public Form2()
         {
             InitializeComponent();
-           
-            
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        //Eigenschfaten für die Klassen wurden hinzugefügt
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            
+            //Eigenschaften für LKW
+            if(Fahrzeugcmbbx.SelectedItem.ToString() == "LKW")
+            {
+                tableLayoutPanel1.Controls.Add(ZuladungLabel,0,6);
+                tableLayoutPanel1.Controls.Add(txtZuladung, 1, 6);
+                tableLayoutPanel1.Controls.Add(AchsenAnzahlTextBox,1, 7);
+                tableLayoutPanel1.Controls.Add(AnzahlAchsenLabel,0, 7);
+
+                tableLayoutPanel1.Controls.Remove(HubTextBox);
+                tableLayoutPanel1.Controls.Remove(HubraumLabel);
+                tableLayoutPanel1.Controls.Remove(SchadstoffKlasseLabel);
+                tableLayoutPanel1.Controls.Remove(SchadstoffKlasseText);
+                tableLayoutPanel1.Controls.Remove(LeistungLabel);
+                tableLayoutPanel1.Controls.Remove(LeistungTextBox);
+            }
+
+           //Eigenschaften für Die Klasse PKW werden Implemntiert
+            if (Fahrzeugcmbbx.SelectedItem.ToString() == "PKW")
+            {
+                tableLayoutPanel1.Controls.Add(HubraumLabel, 0, 6);
+                tableLayoutPanel1.Controls.Add(HubTextBox, 1, 6);
+                tableLayoutPanel1.Controls.Add(LeistungLabel, 0,7);
+                tableLayoutPanel1.Controls.Add(LeistungTextBox, 1, 7);
+                tableLayoutPanel1.Controls.Add(SchadstoffKlasseLabel, 0, 6);
+                tableLayoutPanel1.Controls.Add(SchadstoffKlasseText, 1, 6);
+                tableLayoutPanel1.Controls.Add(LeistungLabel, 0, 7);
+                tableLayoutPanel1.Controls.Add(LeistungTextBox, 1, 7);
+                tableLayoutPanel1.Controls.Add(HubraumLabel, 0, 8);
+                tableLayoutPanel1.Controls.Add(HubTextBox, 1, 8);
+
+                tableLayoutPanel1.Controls.Remove(AnzahlAchsenLabel);
+                tableLayoutPanel1.Controls.Remove(AchsenAnzahlTextBox);
+                tableLayoutPanel1.Controls.Remove(ZuladungLabel);
+                tableLayoutPanel1.Controls.Remove(txtZuladung);
+
+                //Eigenschaften für Motorräder
+            }
+            if (Fahrzeugcmbbx.SelectedItem.ToString()=="Motorräder")
+            {
+                tableLayoutPanel1.Controls.Add(HubraumLabel, 0, 6);
+                tableLayoutPanel1.Controls.Add(HubTextBox, 1,   6);
+
+                tableLayoutPanel1.Controls.Remove(AnzahlAchsenLabel);
+                tableLayoutPanel1.Controls.Remove(AchsenAnzahlTextBox);
+                tableLayoutPanel1.Controls.Remove(ZuladungLabel);
+                tableLayoutPanel1.Controls.Remove(txtZuladung);
+                tableLayoutPanel1.Controls.Remove(SchadstoffKlasseLabel);
+                tableLayoutPanel1.Controls.Remove(SchadstoffKlasseText);
+                tableLayoutPanel1.Controls.Remove(LeistungLabel);
+                tableLayoutPanel1.Controls.Remove(LeistungTextBox);
+            }
         }
 
         // Es wird Programmiert was passiert wenn man auf den Hinzufüge Button drückt
 
         private void Hinzufügen_Click(object sender, EventArgs e)
         {
-                if (Hersteller.Text != "" && FahrzeugTextBox.Text == "PKW" && KennzeichenTextBox.Text != "" && AnschaffungspreisTextBox.Text != "" && ErstzulassungTextBox.Text != "")
+                if (Hersteller.Text != "" && Fahrzeugcmbbx.Text == "PKW" && KennzeichenTextBox.Text != "" && AnschaffungspreisTextBox.Text != "" && ErstzulassungTextBox.Text != "")
                 {
-                    Fahrzeug1 = new PKW();
-                    Fahrzeug1.MeinKennzeichen = KennzeichenTextBox.Text;
-                    Fahrzeug1.MeinModell = ModellTextBox.Text;
-                    Fahrzeug1.MeinHersteller = HerstellerTextBox.Text;
-                    Fahrzeug1.MeineErstzulassung = ErstzulassungTextBox.Text;
-                    Fahrzeug1.MeinFahrzeug = FahrzeugTextBox.Text;
+                PKW pKW = new PKW();
+                Fahrzeug1 = pKW;
+                    pKW.MeinKennzeichen = KennzeichenTextBox.Text;
+                    pKW.MeinModell = ModellTextBox.Text;
+                    pKW.MeinHersteller = HerstellerTextBox.Text;
+                    pKW.MeineErstzulassung = ErstzulassungTextBox.Text;
+                    pKW.MeinFahrzeug = Fahrzeugcmbbx.Text;
+                    ((PKW)pKW).MeineSchadStoffKlasse = SchadstoffKlasseText.Text;
+                try
+                {
+                    ((PKW)pKW).MeinHubraum = Convert.ToInt32(HubTextBox.Text);
+                    ((PKW)pKW).MeineLeistung = Convert.ToInt32(LeistungTextBox.Text);
                 }
-                else if (FahrzeugTextBox.Text=="LKW")
+                catch (Exception)
                 {
-                    Fahrzeug1 = new LKW();
-                    Fahrzeug1.MeinKennzeichen = KennzeichenTextBox.Text;
-                    Fahrzeug1.MeinModell = ModellTextBox.Text;
-                    Fahrzeug1.MeinHersteller = HerstellerTextBox.Text;
-                    Fahrzeug1.MeineErstzulassung = ErstzulassungTextBox.Text;
-                    Fahrzeug1.MeinFahrzeug = FahrzeugTextBox.Text;
+                    MessageBox.Show("Sie müssen Zahlen eventuell eingeben");
+
+                    return; throw;
                 }
-                else if (FahrzeugTextBox.Text=="Motorrräder")
+                }
+                
+                else if (Fahrzeugcmbbx.Text=="LKW")
                 {
-                Fahrzeug1 = new Motorräder();
-                    Fahrzeug1.MeinKennzeichen = KennzeichenTextBox.Text;
-                    Fahrzeug1.MeinModell = ModellTextBox.Text;
-                    Fahrzeug1.MeinHersteller = HerstellerTextBox.Text;
-                    Fahrzeug1.MeineErstzulassung = ErstzulassungTextBox.Text;
-                    Fahrzeug1.MeinFahrzeug = FahrzeugTextBox.Text;
+                LKW lKW = new LKW();
+                Fahrzeug1 = lKW;
+                   lKW.MeinKennzeichen = KennzeichenTextBox.Text;
+                   lKW.MeinModell = ModellTextBox.Text;
+                   lKW.MeinHersteller = HerstellerTextBox.Text;
+                   lKW.MeineErstzulassung = ErstzulassungTextBox.Text;
+                   lKW.MeinFahrzeug = Fahrzeugcmbbx.Text;
+
+                try
+                {
+                    ((LKW)lKW).MeineZuladung = Convert.ToInt32(txtZuladung.Text);
+                    ((LKW)lKW).MeineAchsen = Convert.ToInt32(AchsenAnzahlTextBox.Text);
+                    lKW.MeinAnschaffungspreis = Convert.ToInt32(AnschaffungspreisTextBox.Text);
+                }
+                catch (Exception)
+                {
+                     MessageBox.Show("Sie müssen Zahlen eingeben bei den Achsen, beim Anschaffungpreis und der Zuladung Zahlen Angeben");
+                     return;  throw;
+                }
+                    
+                }
+                else if (Fahrzeugcmbbx.Text=="Motorräder")
+                {
+                Motorräder motorräder = new Motorräder();
+                Fahrzeug1 = motorräder;
+                    motorräder.MeinKennzeichen = KennzeichenTextBox.Text;
+                    motorräder.MeinModell = ModellTextBox.Text;
+                    motorräder.MeinHersteller = HerstellerTextBox.Text;
+                    motorräder.MeineErstzulassung = ErstzulassungTextBox.Text;
+                    motorräder.MeinFahrzeug = Fahrzeugcmbbx.Text;
+                    
+                try
+                {
+                    ((Motorräder)motorräder).MeineHubraume = Convert.ToInt32(HubTextBox.Text);
+                    motorräder.MeinAnschaffungspreis = Convert.ToInt32(AnschaffungspreisTextBox.Text);
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Sie dürfen nur Zahlen im dem text Feld Hubraum angeben und im Feld Anschaffungspreis");
+                    return; throw;
+                }
                 }
                 else
                 {
@@ -64,6 +152,11 @@ namespace Fahrezug
                 }
                 
                 this.Close();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

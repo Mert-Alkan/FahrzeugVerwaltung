@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Fahrezug.Properties
+namespace Fahrzeug.Properties
 {
 
 

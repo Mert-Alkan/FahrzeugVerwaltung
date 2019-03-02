@@ -1,4 +1,4 @@
-﻿namespace Fahrezug
+﻿namespace Fahrzeug
 {
     partial class Form1
     {

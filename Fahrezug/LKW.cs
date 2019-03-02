@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Fahrezug
+namespace Fahrzeug
 {
     public class LKW : Fahrzeug
     {
@@ -15,13 +15,34 @@ namespace Fahrezug
             }
         }
 
-        private string Zuladung
+        private int Zuladung
         {
-            get => default(string);
+            get => default(int);
             set
             {
             }
         }
+
+
+
+        public int MeineAchsen
+        {
+            get { return Anzahl_Achsen; }
+            set { Anzahl_Achsen = value; }
+        }
+
+
+
+
+
+
+        public int MeineZuladung
+        {
+            get { return Zuladung; }
+            set { Zuladung = value; }
+        }
+
+
 
         public void Berechne_Steuerschuld()
         {

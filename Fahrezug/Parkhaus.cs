@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Fahrezug
+namespace Fahrzeug
 {
     public class Parkhaus
     {
+
         public int Anzahl_Sitzplätze;
         public int GaragenNr;
+
+        
     }
 }

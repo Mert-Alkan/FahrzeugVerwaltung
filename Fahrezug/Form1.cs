@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using System.IO;
 
-namespace Fahrezug
+namespace Fahrzeug
 {
     public partial class Form1 : Form
     {
