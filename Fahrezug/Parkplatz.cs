@@ -7,7 +7,7 @@ namespace Fahrzeug
 {
     public class Parkplatz
     {
-        private int ParkplatzNr;
+        public int ParkplatzNr;
 
         public void Parkplatz_Typ()
         {

@@ -107,7 +107,7 @@
             this.SchadstoffKlasseText.Margin = new System.Windows.Forms.Padding(6);
             this.SchadstoffKlasseText.Name = "SchadstoffKlasseText";
             this.SchadstoffKlasseText.Size = new System.Drawing.Size(196, 31);
-            this.SchadstoffKlasseText.TabIndex = 2;
+            this.SchadstoffKlasseText.TabIndex = 9;
             // 
             // HubraumLabel
             // 
@@ -127,7 +127,7 @@
             this.AchsenAnzahlTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.AchsenAnzahlTextBox.Name = "AchsenAnzahlTextBox";
             this.AchsenAnzahlTextBox.Size = new System.Drawing.Size(190, 31);
-            this.AchsenAnzahlTextBox.TabIndex = 2;
+            this.AchsenAnzahlTextBox.TabIndex = 6;
             // 
             // txtZuladung
             // 
@@ -136,7 +136,7 @@
             this.txtZuladung.Margin = new System.Windows.Forms.Padding(6);
             this.txtZuladung.Name = "txtZuladung";
             this.txtZuladung.Size = new System.Drawing.Size(190, 31);
-            this.txtZuladung.TabIndex = 2;
+            this.txtZuladung.TabIndex = 5;
             // 
             // label4
             // 
@@ -167,7 +167,7 @@
             this.AnschaffungspreisTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.AnschaffungspreisTextBox.Name = "AnschaffungspreisTextBox";
             this.AnschaffungspreisTextBox.Size = new System.Drawing.Size(182, 31);
-            this.AnschaffungspreisTextBox.TabIndex = 1;
+            this.AnschaffungspreisTextBox.TabIndex = 3;
             // 
             // KennzeichenTextBox
             // 
@@ -176,7 +176,7 @@
             this.KennzeichenTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.KennzeichenTextBox.Name = "KennzeichenTextBox";
             this.KennzeichenTextBox.Size = new System.Drawing.Size(184, 31);
-            this.KennzeichenTextBox.TabIndex = 1;
+            this.KennzeichenTextBox.TabIndex = 2;
             // 
             // ErstzulassungTextBox
             // 
@@ -185,7 +185,7 @@
             this.ErstzulassungTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.ErstzulassungTextBox.Name = "ErstzulassungTextBox";
             this.ErstzulassungTextBox.Size = new System.Drawing.Size(188, 31);
-            this.ErstzulassungTextBox.TabIndex = 7;
+            this.ErstzulassungTextBox.TabIndex = 4;
             // 
             // label5
             // 
@@ -252,7 +252,7 @@
             this.HerstellerTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.HerstellerTextBox.Name = "HerstellerTextBox";
             this.HerstellerTextBox.Size = new System.Drawing.Size(184, 31);
-            this.HerstellerTextBox.TabIndex = 3;
+            this.HerstellerTextBox.TabIndex = 0;
             // 
             // label2
             // 
@@ -294,7 +294,7 @@
             this.HubTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.HubTextBox.Name = "HubTextBox";
             this.HubTextBox.Size = new System.Drawing.Size(196, 31);
-            this.HubTextBox.TabIndex = 10;
+            this.HubTextBox.TabIndex = 7;
             // 
             // LeistungTextBox
             // 
@@ -303,7 +303,7 @@
             this.LeistungTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.LeistungTextBox.Name = "LeistungTextBox";
             this.LeistungTextBox.Size = new System.Drawing.Size(196, 31);
-            this.LeistungTextBox.TabIndex = 11;
+            this.LeistungTextBox.TabIndex = 8;
             // 
             // LeistungLabel
             // 
@@ -333,7 +333,7 @@
             this.Hinzufügen.Margin = new System.Windows.Forms.Padding(6);
             this.Hinzufügen.Name = "Hinzufügen";
             this.Hinzufügen.Size = new System.Drawing.Size(150, 44);
-            this.Hinzufügen.TabIndex = 1;
+            this.Hinzufügen.TabIndex = 0;
             this.Hinzufügen.Text = "Hinzufügen";
             this.Hinzufügen.UseVisualStyleBackColor = true;
             this.Hinzufügen.Click += new System.EventHandler(this.Hinzufügen_Click);
@@ -342,7 +342,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1243, 907);
+            this.ClientSize = new System.Drawing.Size(1244, 908);
             this.Controls.Add(this.Hinzufügen);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(6);

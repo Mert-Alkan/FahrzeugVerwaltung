@@ -7,7 +7,7 @@ namespace Fahrzeug
 {
     public class Parkpool
     {
-        private int Stellplatz_Nr;
+        public  int Stellplatz_Nr;
 
         public Parkpool()
         {
