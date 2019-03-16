@@ -16,6 +16,7 @@ namespace Fahrzeug
         public Form2()
         {
             InitializeComponent();
+            
         }
         //Eigenschfaten für die Klassen wurden hinzugefügt
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,7 +76,7 @@ namespace Fahrzeug
 
         // Es wird Programmiert was passiert wenn man auf den Hinzufüge Button drückt
 
-        private void Hinzufügen_Click(object sender, EventArgs e)
+        public void Hinzufügen_Click(object sender, EventArgs e)
         {
                 if (Hersteller.Text != "" && Fahrzeugcmbbx.Text == "PKW" && KennzeichenTextBox.Text != "" && AnschaffungspreisTextBox.Text != "" && ErstzulassungTextBox.Text != "")
                 {
@@ -155,6 +156,26 @@ namespace Fahrzeug
         }
 
         private void Form2_Load(object sender, EventArgs e)
+        {
+            Füllenundleeren();
+        }
+
+        void Füllenundleeren()
+        {
+            tableLayoutPanel1.Controls.Remove(txtZuladung);
+            tableLayoutPanel1.Controls.Remove(HubraumLabel);
+            tableLayoutPanel1.Controls.Remove(ZuladungLabel);
+            tableLayoutPanel1.Controls.Remove(SchadstoffKlasseLabel);
+            tableLayoutPanel1.Controls.Remove(AnzahlAchsenLabel);
+            tableLayoutPanel1.Controls.Remove(AchsenAnzahlTextBox);
+            tableLayoutPanel1.Controls.Remove(LeistungLabel);
+            tableLayoutPanel1.Controls.Remove(LeistungTextBox);
+            tableLayoutPanel1.Controls.Remove(HubTextBox);
+            tableLayoutPanel1.Controls.Remove(SchadstoffKlasseText);
+
+        }
+
+        private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

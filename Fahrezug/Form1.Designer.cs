@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.FahrzeugListe = new System.Windows.Forms.ListBox();
+            this.FahrzeugListBox = new System.Windows.Forms.ListBox();
             this.FahrzeugHinzufügen_Button = new System.Windows.Forms.Button();
             this.LöschButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -40,34 +40,35 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.BearbeitenButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // FahrzeugListe
+            // FahrzeugListBox
             // 
-            this.FahrzeugListe.FormattingEnabled = true;
-            this.FahrzeugListe.ItemHeight = 25;
-            this.FahrzeugListe.Location = new System.Drawing.Point(-2, -2);
-            this.FahrzeugListe.Margin = new System.Windows.Forms.Padding(4);
-            this.FahrzeugListe.Name = "FahrzeugListe";
-            this.FahrzeugListe.Size = new System.Drawing.Size(696, 654);
-            this.FahrzeugListe.TabIndex = 0;
-            this.FahrzeugListe.SelectedIndexChanged += new System.EventHandler(this.FahrzeugListe_SelectedIndexChanged);
+            this.FahrzeugListBox.FormattingEnabled = true;
+            this.FahrzeugListBox.ItemHeight = 25;
+            this.FahrzeugListBox.Location = new System.Drawing.Point(-2, -2);
+            this.FahrzeugListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FahrzeugListBox.Name = "FahrzeugListBox";
+            this.FahrzeugListBox.Size = new System.Drawing.Size(696, 654);
+            this.FahrzeugListBox.TabIndex = 0;
+            this.FahrzeugListBox.SelectedIndexChanged += new System.EventHandler(this.FahrzeugListe_SelectedIndexChanged);
             // 
             // FahrzeugHinzufügen_Button
             // 
             this.FahrzeugHinzufügen_Button.Location = new System.Drawing.Point(772, 712);
-            this.FahrzeugHinzufügen_Button.Margin = new System.Windows.Forms.Padding(4);
+            this.FahrzeugHinzufügen_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FahrzeugHinzufügen_Button.Name = "FahrzeugHinzufügen_Button";
             this.FahrzeugHinzufügen_Button.Size = new System.Drawing.Size(344, 40);
             this.FahrzeugHinzufügen_Button.TabIndex = 1;
             this.FahrzeugHinzufügen_Button.Text = "Fahrzeug Hinzufügen";
             this.FahrzeugHinzufügen_Button.UseVisualStyleBackColor = true;
-            this.FahrzeugHinzufügen_Button.Click += new System.EventHandler(this.Button1_Click);
+            this.FahrzeugHinzufügen_Button.Click += new System.EventHandler(this.Fahrzeug_Hinzufügen);
             // 
             // LöschButton
             // 
-            this.LöschButton.Location = new System.Drawing.Point(581, 712);
-            this.LöschButton.Margin = new System.Windows.Forms.Padding(4);
+            this.LöschButton.Location = new System.Drawing.Point(580, 712);
+            this.LöschButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LöschButton.Name = "LöschButton";
             this.LöschButton.Size = new System.Drawing.Size(148, 40);
             this.LöschButton.TabIndex = 2;
@@ -78,7 +79,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(962, 71);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(6);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(196, 31);
             this.textBox1.TabIndex = 4;
@@ -86,7 +87,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(962, 167);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(6);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(196, 31);
             this.textBox2.TabIndex = 5;
@@ -94,7 +95,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(962, 262);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(6);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(196, 31);
             this.textBox3.TabIndex = 6;
@@ -102,7 +103,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(962, 356);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(6);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(196, 31);
             this.textBox4.TabIndex = 7;
@@ -150,6 +151,7 @@
             // BearbeitenButton
             // 
             this.BearbeitenButton.Location = new System.Drawing.Point(404, 712);
+            this.BearbeitenButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BearbeitenButton.Name = "BearbeitenButton";
             this.BearbeitenButton.Size = new System.Drawing.Size(146, 40);
             this.BearbeitenButton.TabIndex = 12;
@@ -157,11 +159,23 @@
             this.BearbeitenButton.UseVisualStyleBackColor = true;
             this.BearbeitenButton.Click += new System.EventHandler(this.Bearbeiten_Button);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(198, 708);
+            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(172, 44);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Suchen";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Suchen_Klick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 967);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.BearbeitenButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -173,8 +187,8 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.LöschButton);
             this.Controls.Add(this.FahrzeugHinzufügen_Button);
-            this.Controls.Add(this.FahrzeugListe);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Controls.Add(this.FahrzeugListBox);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "SpeichernButton";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -184,8 +198,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox FahrzeugListe;
         private System.Windows.Forms.Button FahrzeugHinzufügen_Button;
         private System.Windows.Forms.Button LöschButton;
         private System.Windows.Forms.TextBox textBox1;
@@ -197,6 +209,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button BearbeitenButton;
+        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.ListBox FahrzeugListBox;
     }
 }
 
