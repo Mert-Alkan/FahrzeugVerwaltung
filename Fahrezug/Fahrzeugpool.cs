@@ -32,12 +32,18 @@ namespace Fahrzeug
                 {
                     return null;
                 }
+            
             }
         }
 
         public void Zurück(int index)
         {
             fahrzeugliste.RemoveAt(index);
+        }
+
+        public void Bearbeiten()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
