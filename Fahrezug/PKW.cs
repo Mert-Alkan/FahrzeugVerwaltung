@@ -9,13 +9,15 @@ namespace Fahrzeug
     {
         private int Hubraum;
         private double Leistung;
-        private string Schadstoffklasse;
+        private int Schadstoffklasse;
 
-        public void Berechne_Steuerschuld()
+        public override float Steuerschuld
         {
-            throw new System.NotImplementedException();
+            //PKW: (Hubraum+99) / 100 * 10 Euro * (Schadstoffklasse+1)
+            get { return (float)(Hubraum + 99) / 100 * 10 * (Schadstoffklasse + 1); }
+
         }
-         
+
 
         public  double MeineLeistung
         {
@@ -25,7 +27,7 @@ namespace Fahrzeug
 
 
 
-        public string  MeineSchadStoffKlasse
+        public int  MeineSchadStoffKlasse
         {
             get { return Schadstoffklasse; }
             set { Schadstoffklasse= value; }

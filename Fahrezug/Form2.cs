@@ -87,9 +87,9 @@ namespace Fahrzeug
                     pKW.MeinHersteller = HerstellerTextBox.Text;
                     pKW.MeineErstzulassung = ErstzulassungTextBox.Text;
                     pKW.MeinFahrzeug = Fahrzeugcmbbx.Text;
-                    ((PKW)pKW).MeineSchadStoffKlasse = SchadstoffKlasseText.Text;
                 try
                 {
+                    ((PKW)pKW).MeineSchadStoffKlasse = Convert.ToInt32(SchadstoffKlasseText.Text);
                     ((PKW)pKW).MeinHubraum = Convert.ToInt32(HubTextBox.Text);
                     ((PKW)pKW).MeineLeistung = Convert.ToInt32(LeistungTextBox.Text);
                 }

@@ -7,39 +7,16 @@ namespace Fahrzeug
 {
     public partial class Form1 : Form
     {
-        static public List<Fahrzeug> fahrzeugliste = new List<Fahrzeug>();
-        
+
+        Fahrzeugpool fahrzeugpool = new Fahrzeugpool();
         public Form1()
         {
             InitializeComponent();
-            FahrzeugListBox.DisplayMember = "GetFormatierteAusgabe";  //Diese Eigenschaft  soll in der fahrzeug liste angezigt werden
+            FahrzeugListBox.DisplayMember = "MeinKennzeichen";  //Diese Eigenschaft  soll in der fahrzeug liste angezigt werden
             
         }
         //ruft form 2 auf und fügt die Datein in die Fahrzeugliste 
-        private void Fahrzeug_Hinzufügen(object sender, EventArgs e)
-        {
-            
-            using (Form2 form2 = new Form2())
-            {
-                form2.ShowDialog();
-                if(form2.Fahrzeug1 == null)  //weil der Wert nie null darf sein habe ich jetzt einfach eine messagebox bei null als Lösung hinzugefügt
-                {
-                    MessageBox.Show("Sie sind wieder im Hauptmenü");
-                }
-                else 
-                fahrzeugliste.Add(form2.Fahrzeug1);
-                try
-                {
-                   // Speichert die Daten Aus Fahrzeug1 in Fahrzeugliste
-                    FahrzeugListBox.Items.Add(form2.Fahrzeug1);
-                }
-                catch (Exception)
-                {
-                    return;
-                }    
-            }
-
-        }
+      
 
         private void FahrzeugListe_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -63,6 +40,8 @@ namespace Fahrzeug
             textBox2.Clear();
             textBox3.Clear();
             textBox4.Clear();
+
+            fahrzeugpool.Zurück(FahrzeugListBox.SelectedIndex);
         }
 
      
@@ -91,6 +70,21 @@ namespace Fahrzeug
             {
                 form3.ShowDialog();
             }
+        }
+
+        private void Berechne_Steuerschuld(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void FahrzeugHinzufügen_Button_Click(object sender, EventArgs e)
+        {
+            FahrzeugListBox.Items.Add(fahrzeugpool.Fahrzeug_Hinzufügen1());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

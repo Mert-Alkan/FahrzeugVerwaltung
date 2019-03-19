@@ -5,14 +5,12 @@ using System.Text;
 
 namespace Fahrzeug
 {
-    public class Motorräder: Fahrzeug
+    public class Motorräder : Fahrzeug
     {
         private int Hubraum;
 
-        public void Berechne_Steuerschuld()
-        {
-            throw new System.NotImplementedException();
-        }
+        public override float Steuerschuld => (float)(Hubraum + 99) / 100 * 20;    //(Hubraum+99) / 100 * 20 Euro  von Mikail 
+
 
 
 
@@ -21,6 +19,7 @@ namespace Fahrzeug
             get { return Hubraum; }
             set { Hubraum = value; }
         }
+
 
     }
 }

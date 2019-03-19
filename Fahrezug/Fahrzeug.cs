@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Fahrzeug
 {
-    public class Fahrzeug
+    public abstract class Fahrzeug
     {
         protected string Hersteller;
         protected int    Anschaffungspreis;
@@ -60,8 +60,12 @@ namespace Fahrzeug
             get { return fahren; }
             set { fahren= value; }
         }
-       
-                
-        
+
+        public abstract float Steuerschuld
+        {
+            get;
+        }
+
+
     }
 }

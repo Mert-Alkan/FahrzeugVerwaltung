@@ -44,9 +44,7 @@ namespace Fahrzeug
 
 
 
-        public void Berechne_Steuerschuld()
-        {
-            throw new System.NotImplementedException();
-        }
+        public override float Steuerschuld => (float)Zuladung * 100; //Diese Schreibweise [=>] wurde automatisch generiert. Mal schauen ob das funktioniert (16032019) Von Mikail
+
     }
 }

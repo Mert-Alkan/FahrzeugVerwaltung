@@ -12,11 +12,12 @@ namespace Fahrzeug
 {
     public partial class Form3 : Form
     {
+        Fahrzeugpool Fahrzeugpool = new Fahrzeugpool();
         public Form3()
         {
             //Die daten der liste werden in die listbox hinzugefügt
             InitializeComponent();
-            listBox1.DataSource = Form1.fahrzeugliste;
+            listBox1.DataSource = Fahrzeugpool.fahrzeugliste;
             listBox1.DisplayMember = "MeinKennzeichen";
             Form2 form2 = new Form2();
         }
