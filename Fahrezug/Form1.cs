@@ -7,7 +7,7 @@ namespace Fahrzeug
 {
     public partial class Form1 : Form
     {
-
+        public   Parkpool Parkpool = new Parkpool();
         Fahrzeugpool fahrzeugpool = new Fahrzeugpool();
         public Form1()
         {
@@ -22,13 +22,12 @@ namespace Fahrzeug
         {
             if (FahrzeugListBox.SelectedItem != null)
             {
-
-                // von dem was im Auto gespeichert wird ind die Fahrzeuliste speichern
-                Fahrzeug auto = FahrzeugListBox.SelectedItem as Fahrzeug;
-                textBox1.Text = auto.MeinModell;
-                textBox2.Text = auto.MeinKennzeichen;
-                textBox3.Text = Convert.ToString(auto.MeinAnschaffungspreis);
-                textBox4.Text = Convert.ToString(auto.MeineErstzulassung);
+                    // von dem was im Auto gespeichert wird ind die Fahrzeuliste speichern
+                    Fahrzeug auto = FahrzeugListBox.SelectedItem as Fahrzeug;
+                    textBox1.Text = auto.MeinModell;
+                    textBox2.Text = auto.MeinKennzeichen;
+                    textBox3.Text = Convert.ToString(auto.MeinAnschaffungspreis);
+                    textBox4.Text = Convert.ToString(auto.MeineErstzulassung);
             }
         }
         // Es wird programmiert was passiert, wenn man auf den LöschButton klickt 
@@ -76,14 +75,19 @@ namespace Fahrzeug
         }
 
         private void FahrzeugHinzufügen_Button_Click(object sender, EventArgs e)
-        { 
-            FahrzeugListBox.Items.Add(fahrzeugpool.Fahrzeug_Hinzufügen1());
+        {
+            if (fahrzeugpool.Fahrzeug_Hinzufügen1() != null)
+            {
+                FahrzeugListBox.Items.Add(fahrzeugpool.Fahrzeug_Hinzufügen1());
+            }
         }
 
-        private void BtnParkhaus_erstellen(object sender, EventArgs e)
+        private void  BtnParkhausHinzufügen_Button_Click(object sender, EventArgs e)
         {
-            Parkpool parkpool = new Parkpool();
-            parkpool.Parkhaus_Erstellen();
+            if (Parkpool.Parkhaus_Erstellen()!= null)
+            {
+                FahrzeugListBox.Items.Add(Parkpool.Parkhaus_Erstellen());
+            }
         }
     }
 }

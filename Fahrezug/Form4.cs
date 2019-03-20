@@ -12,7 +12,7 @@ namespace Fahrzeug
 {
     public partial class Form4 : Form
     {
-       public  Parkhaus Parkhaus1 = new Parkhaus();
+        public Parkhaus Parkhaus1;
         public Form4()
         {
             InitializeComponent();
@@ -23,9 +23,19 @@ namespace Fahrzeug
 
         }
 
-        private void HinzuügenButton(object sender, EventArgs e)
+        private void HinzufügeButton(object sender, EventArgs e)
         {
-            Parkhaus1.MeineAdresse = AdresseTextBox.Text;
+            if (OrttxtBox.Text!="" && AdresseTextBox.Text!= "" && PlzTextBox.Text !="")
+            {
+                Parkhaus1.MeineAdresse = AdresseTextBox.Text;
+                Parkhaus1.Meinort = OrttxtBox.Text;
+                Parkhaus1.MeinPlz = PlzTextBox.Text;
+            }
+            else
+            {
+                MessageBox.Show("Sie müssen alle Felder ausfüllen");
+            }
+            this.Close();
         }
     }
 }

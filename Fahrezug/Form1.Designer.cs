@@ -180,7 +180,7 @@
             this.button3.TabIndex = 15;
             this.button3.Text = "Parkhaus";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.BtnParkhaus_erstellen);
+            this.button3.Click += new System.EventHandler(this.BtnParkhausHinzufügen_Button_Click);
             // 
             // Form1
             // 

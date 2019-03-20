@@ -23,8 +23,6 @@ namespace Fahrzeug
                     fahrzeugliste.Add(form2.Fahrzeug1);
                 try
                 {
-                    // Speichert die Daten Aus Fahrzeug1 in Fahrzeugliste
-                    //FahrzeugListBox.Items.Add(form2.Fahrzeug1);
                     return form2.Fahrzeug1;
                 }
                 catch (Exception)
