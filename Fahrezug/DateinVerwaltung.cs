@@ -12,12 +12,8 @@ namespace Fahrzeug
     [Serializable]
     public class DateinVerwaltung
     {
-       
-
         public void Speichern()
         {
-
-            Form2 form2 = new Form2();
             try
             {
                 FileStream stream;
@@ -26,7 +22,6 @@ namespace Fahrzeug
                 BinaryFormatter formatter = new BinaryFormatter();
                 formatter.Serialize(stream, Fahrzeugpool.fahrzeugliste);
                 stream.Close();
-
             }
             catch (IOException e)
             {
@@ -36,7 +31,6 @@ namespace Fahrzeug
 
         public void Laden()
         {
-            Form2 form2 = new Form2();
             try
             {
                 BinaryFormatter Formatter = new BinaryFormatter();
@@ -47,7 +41,6 @@ namespace Fahrzeug
                 foreach (Fahrzeug fahrzeug in Fahrzeugpool.fahrzeugliste)
                 {
                     Form1 form1 = new Form1();
-                    
                     form1.FahrzeugListBox.Items.Add(Fahrzeugpool.fahrzeugliste);
                 }
             }

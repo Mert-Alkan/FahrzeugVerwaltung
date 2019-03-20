@@ -12,7 +12,7 @@ namespace Fahrzeug
 {
     public partial class Form2 : Form
     {
-        public Fahrzeug Fahrzeug1 { get; protected set; }
+        public Fahrzeug Fahrzeug1;
         public Form2()
         {
             InitializeComponent();

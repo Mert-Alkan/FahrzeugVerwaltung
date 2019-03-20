@@ -12,7 +12,6 @@ namespace Fahrzeug
         
         public Fahrzeug Fahrzeug_Hinzufügen1()
         {
-
             using (Form2 form2 = new Form2())
             {
                 form2.ShowDialog();
@@ -32,7 +31,6 @@ namespace Fahrzeug
                 {
                     return null;
                 }
-            
             }
         }
 
