@@ -9,7 +9,7 @@ namespace Fahrzeug
     {
         float tmpSteuer;
         public   Parkpool Parkpool = new Parkpool();
-        Fahrzeugpool fahrzeugpool = new Fahrzeugpool();
+        public   Fahrzeugpool fahrzeugpool = new Fahrzeugpool();
 
         
 
@@ -81,11 +81,26 @@ namespace Fahrzeug
             textBox2.Clear();
             textBox3.Clear();
             textBox4.Clear();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            Fahrzeug Beispiel;
+
+            PKW pKW = new PKW();
+            Beispiel = pKW;
+            pKW.MeinHersteller = "VW";
+            pKW.MeinModell = "Käfer";
+            pKW.MeinKennzeichen = "K-GS-01";
+            pKW.MeineErstzulassung = "1965";
+            pKW.MeinAnschaffungspreis = Convert.ToInt32("9999");
+            pKW.MeinHubraum = Convert.ToInt32("1000");
+            pKW.MeineLeistung = Convert.ToInt32("30");
+            pKW.MeineSchadStoffKlasse = Convert.ToInt32("1");
+
+            Fahrzeugpool.fahrzeugliste.Add(Beispiel);
+            FahrzeugListBox.Items.Add(Beispiel);
         }
         // Es wird Programmiert was passiert wenn man auf den Bearbeiten Button drückt
         private void Bearbeiten_Button(object sender, EventArgs e)
@@ -135,6 +150,11 @@ namespace Fahrzeug
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BeispielDaten()
+        {
+           //nur für mich 
         }
     }
 }
