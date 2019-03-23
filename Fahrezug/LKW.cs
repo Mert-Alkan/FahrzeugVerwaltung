@@ -7,33 +7,15 @@ namespace Fahrzeug
 {
     public class LKW : Fahrzeug
     {
-        private int Anzahl_Achsen
+        private string Achsen;
+        private int Zuladung;
+
+
+        public string MeineAchsen
         {
-            get => default(int);
-            set
-            {
-            }
+            get { return Achsen; }
+            set { Achsen = value; }
         }
-
-        private int Zuladung
-        {
-            get => default(int);
-            set
-            {
-            }
-        }
-
-
-
-        public int MeineAchsen
-        {
-            get { return Anzahl_Achsen; }
-            set { Anzahl_Achsen = value; }
-        }
-
-
-
-
 
 
         public int MeineZuladung
@@ -41,8 +23,6 @@ namespace Fahrzeug
             get { return Zuladung; }
             set { Zuladung = value; }
         }
-
-
 
         public override float Steuerschuld => (float)Zuladung * 100; //Diese Schreibweise [=>] wurde automatisch generiert. Mal schauen ob das funktioniert (16032019) Von Mikail
 

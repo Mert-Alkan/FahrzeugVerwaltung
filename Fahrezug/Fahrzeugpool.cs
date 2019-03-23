@@ -9,7 +9,7 @@ namespace Fahrzeug
     public class Fahrzeugpool
     {
         static public List<Fahrzeug> fahrzeugliste = new List<Fahrzeug>();
-        
+       
         public Fahrzeug Fahrzeug_Hinzufügen1()
         {
             using (Form2 form2 = new Form2())
@@ -20,7 +20,9 @@ namespace Fahrzeug
                     MessageBox.Show("Sie sind wieder im Hauptmenü");
                 }
                 else
+                {
                     fahrzeugliste.Add(form2.Fahrzeug1);
+                }
                 try
                 {
                     return form2.Fahrzeug1;
@@ -30,16 +32,6 @@ namespace Fahrzeug
                     return null;
                 }
             }
-        }
-
-        public void Zurück(int index)
-        {
-            fahrzeugliste.RemoveAt(index);
-        }
-
-        public void Bearbeiten()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

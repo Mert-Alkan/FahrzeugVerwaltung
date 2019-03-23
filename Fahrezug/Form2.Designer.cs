@@ -83,7 +83,7 @@
             this.tableLayoutPanel1.Controls.Add(this.LeistungLabel, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.SchadstoffKlasseLabel, 0, 10);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(134, 79);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 11;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
@@ -105,7 +105,7 @@
             // 
             this.SchadstoffKlasseText.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SchadstoffKlasseText.Location = new System.Drawing.Point(542, 658);
-            this.SchadstoffKlasseText.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.SchadstoffKlasseText.Margin = new System.Windows.Forms.Padding(6);
             this.SchadstoffKlasseText.Name = "SchadstoffKlasseText";
             this.SchadstoffKlasseText.Size = new System.Drawing.Size(196, 31);
             this.SchadstoffKlasseText.TabIndex = 9;
@@ -125,7 +125,7 @@
             // 
             this.AchsenAnzahlTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AchsenAnzahlTextBox.Location = new System.Drawing.Point(545, 479);
-            this.AchsenAnzahlTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.AchsenAnzahlTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.AchsenAnzahlTextBox.Name = "AchsenAnzahlTextBox";
             this.AchsenAnzahlTextBox.Size = new System.Drawing.Size(190, 31);
             this.AchsenAnzahlTextBox.TabIndex = 6;
@@ -134,7 +134,7 @@
             // 
             this.txtZuladung.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtZuladung.Location = new System.Drawing.Point(545, 413);
-            this.txtZuladung.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtZuladung.Margin = new System.Windows.Forms.Padding(6);
             this.txtZuladung.Name = "txtZuladung";
             this.txtZuladung.Size = new System.Drawing.Size(190, 31);
             this.txtZuladung.TabIndex = 5;
@@ -165,7 +165,7 @@
             // 
             this.AnschaffungspreisTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AnschaffungspreisTextBox.Location = new System.Drawing.Point(549, 281);
-            this.AnschaffungspreisTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AnschaffungspreisTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.AnschaffungspreisTextBox.Name = "AnschaffungspreisTextBox";
             this.AnschaffungspreisTextBox.Size = new System.Drawing.Size(182, 31);
             this.AnschaffungspreisTextBox.TabIndex = 3;
@@ -174,7 +174,7 @@
             // 
             this.KennzeichenTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.KennzeichenTextBox.Location = new System.Drawing.Point(548, 215);
-            this.KennzeichenTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.KennzeichenTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.KennzeichenTextBox.Name = "KennzeichenTextBox";
             this.KennzeichenTextBox.Size = new System.Drawing.Size(184, 31);
             this.KennzeichenTextBox.TabIndex = 2;
@@ -183,7 +183,7 @@
             // 
             this.ErstzulassungTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ErstzulassungTextBox.Location = new System.Drawing.Point(546, 347);
-            this.ErstzulassungTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ErstzulassungTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.ErstzulassungTextBox.Name = "ErstzulassungTextBox";
             this.ErstzulassungTextBox.Size = new System.Drawing.Size(188, 31);
             this.ErstzulassungTextBox.TabIndex = 4;
@@ -203,7 +203,7 @@
             // 
             this.ModellTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ModellTextBox.Location = new System.Drawing.Point(548, 149);
-            this.ModellTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ModellTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ModellTextBox.Name = "ModellTextBox";
             this.ModellTextBox.Size = new System.Drawing.Size(184, 31);
             this.ModellTextBox.TabIndex = 1;
@@ -240,7 +240,7 @@
             "LKW",
             "Motorräder"});
             this.Fahrzeugcmbbx.Location = new System.Drawing.Point(548, 16);
-            this.Fahrzeugcmbbx.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Fahrzeugcmbbx.Margin = new System.Windows.Forms.Padding(6);
             this.Fahrzeugcmbbx.Name = "Fahrzeugcmbbx";
             this.Fahrzeugcmbbx.Size = new System.Drawing.Size(184, 33);
             this.Fahrzeugcmbbx.TabIndex = 1;
@@ -250,7 +250,7 @@
             // 
             this.HerstellerTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.HerstellerTextBox.Location = new System.Drawing.Point(548, 83);
-            this.HerstellerTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HerstellerTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.HerstellerTextBox.Name = "HerstellerTextBox";
             this.HerstellerTextBox.Size = new System.Drawing.Size(184, 31);
             this.HerstellerTextBox.TabIndex = 0;
@@ -292,7 +292,7 @@
             // 
             this.HubTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.HubTextBox.Location = new System.Drawing.Point(542, 545);
-            this.HubTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.HubTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.HubTextBox.Name = "HubTextBox";
             this.HubTextBox.Size = new System.Drawing.Size(196, 31);
             this.HubTextBox.TabIndex = 7;
@@ -301,7 +301,7 @@
             // 
             this.LeistungTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LeistungTextBox.Location = new System.Drawing.Point(542, 607);
-            this.LeistungTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.LeistungTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.LeistungTextBox.Name = "LeistungTextBox";
             this.LeistungTextBox.Size = new System.Drawing.Size(196, 31);
             this.LeistungTextBox.TabIndex = 8;
@@ -331,7 +331,7 @@
             // Hinzufügen
             // 
             this.Hinzufügen.Location = new System.Drawing.Point(1000, 638);
-            this.Hinzufügen.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Hinzufügen.Margin = new System.Windows.Forms.Padding(6);
             this.Hinzufügen.Name = "Hinzufügen";
             this.Hinzufügen.Size = new System.Drawing.Size(150, 44);
             this.Hinzufügen.TabIndex = 0;
@@ -346,7 +346,7 @@
             this.ClientSize = new System.Drawing.Size(1244, 908);
             this.Controls.Add(this.Hinzufügen);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);

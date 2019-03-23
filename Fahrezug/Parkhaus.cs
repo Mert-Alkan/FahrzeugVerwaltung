@@ -8,7 +8,6 @@ namespace Fahrzeug
     public class Parkhaus
     {
 
-        public int Anzahl_Sitzplätze;
         public int GaragenNr;
         private string Adresse;
         private string Ort;
@@ -35,7 +34,7 @@ namespace Fahrzeug
         public string MeineAdresse
         {
             get { return Adresse; }
-            set {Adresse = value; }
+            set { Adresse = value; }
         }
     }
 }

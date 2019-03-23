@@ -89,9 +89,9 @@ namespace Fahrzeug
                     pKW.MeinFahrzeug = Fahrzeugcmbbx.Text;
                 try
                 {
-                    ((PKW)pKW).MeineSchadStoffKlasse = Convert.ToInt32(SchadstoffKlasseText.Text);
-                    ((PKW)pKW).MeinHubraum = Convert.ToInt32(HubTextBox.Text);
-                    ((PKW)pKW).MeineLeistung = Convert.ToInt32(LeistungTextBox.Text);
+                    pKW.MeineSchadStoffKlasse = Convert.ToInt32(SchadstoffKlasseText.Text);
+                    pKW.MeinHubraum = Convert.ToInt32(HubTextBox.Text);
+                    pKW.MeineLeistung = Convert.ToInt32(LeistungTextBox.Text);
                 }
                 catch (Exception)
                 {
@@ -110,11 +110,10 @@ namespace Fahrzeug
                    lKW.MeinHersteller = HerstellerTextBox.Text;
                    lKW.MeineErstzulassung = ErstzulassungTextBox.Text;
                    lKW.MeinFahrzeug = Fahrzeugcmbbx.Text;
-
                 try
                 {
-                    ((LKW)lKW).MeineZuladung = Convert.ToInt32(txtZuladung.Text);
-                    ((LKW)lKW).MeineAchsen = Convert.ToInt32(AchsenAnzahlTextBox.Text);
+                    lKW.MeineZuladung = Convert.ToInt32(txtZuladung.Text);
+                    lKW.MeineAchsen = AchsenAnzahlTextBox.Text;
                     lKW.MeinAnschaffungspreis = Convert.ToInt32(AnschaffungspreisTextBox.Text);
                 }
                 catch (Exception)
@@ -136,7 +135,7 @@ namespace Fahrzeug
                     
                 try
                 {
-                    ((Motorräder)motorräder).MeineHubraume = Convert.ToInt32(HubTextBox.Text);
+                    motorräder.MeineHubraume = Convert.ToInt32(HubTextBox.Text);
                     motorräder.MeinAnschaffungspreis = Convert.ToInt32(AnschaffungspreisTextBox.Text);
 
                 }
@@ -158,6 +157,7 @@ namespace Fahrzeug
         private void Form2_Load(object sender, EventArgs e)
         {
             Füllenundleeren();
+            
         }
 
         void Füllenundleeren()

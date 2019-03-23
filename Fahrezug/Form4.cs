@@ -27,15 +27,15 @@ namespace Fahrzeug
         {
             if (OrttxtBox.Text!="" && AdresseTextBox.Text!= "" && PlzTextBox.Text !="")
             {
-                Parkhaus1.MeineAdresse = AdresseTextBox.Text;
-                Parkhaus1.Meinort = OrttxtBox.Text;
-                Parkhaus1.MeinPlz = PlzTextBox.Text;
+                    Parkhaus1.MeineAdresse = AdresseTextBox.Text;
+                    Parkhaus1.Meinort = OrttxtBox.Text;
+                    Parkhaus1.MeinPlz = PlzTextBox.Text;
+                    this.Close();
             }
             else
             {
                 MessageBox.Show("Sie müssen alle Felder ausfüllen");
             }
-            this.Close();
         }
     }
 }
