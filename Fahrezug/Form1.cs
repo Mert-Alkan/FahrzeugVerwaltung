@@ -92,8 +92,6 @@ namespace Fahrzeug
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            DateinVerwaltung dateinVerwaltung = new DateinVerwaltung();
-            dateinVerwaltung.Speichern();
             Fahrzeug Beispiel;
 
             PKW pKW = new PKW();
