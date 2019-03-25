@@ -214,7 +214,7 @@
             this.label5.Size = new System.Drawing.Size(148, 25);
             this.label5.TabIndex = 16;
             this.label5.Text = "Achsenanzahl";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.label5.Click += new System.EventHandler(this.Label5_Click);
             // 
             // AchsenTextBox
             // 

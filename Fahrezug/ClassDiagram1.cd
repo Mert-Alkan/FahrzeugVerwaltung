@@ -10,7 +10,7 @@
   <Class Name="Fahrzeug.Fahrzeugpool">
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAACAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAQAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Fahrzeugpool.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -24,7 +24,7 @@
   <Class Name="Fahrzeug.Fahrzeug">
     <Position X="3" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAAAAAgAAAABAgABAGAAABAEIAEwAAAABAAA=</HashCode>
+      <HashCode>AAABAAAAAAQAAgAAAgBAgABAGAAABQEIAEwAAAABAAg=</HashCode>
       <FileName>Fahrzeug.cs</FileName>
       <NewMemberFileName>LKW.cs</NewMemberFileName>
     </TypeIdentifier>
@@ -33,9 +33,7 @@
     <Position X="3.5" Y="7.25" Width="1.5" />
     <InheritanceLine Type="Fahrzeug.Fahrzeug" FixedToPoint="true">
       <Path>
-        <Point X="3.75" Y="6.613" />
-        <Point X="3.75" Y="6.875" />
-        <Point X="4.125" Y="6.875" />
+        <Point X="3.75" Y="7.382" />
         <Point X="4.125" Y="7.25" />
       </Path>
     </InheritanceLine>
@@ -59,7 +57,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Fahrzeug.Parkplatz">
-    <Position X="7.25" Y="3.5" Width="1.5" />
+    <Position X="11" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Parkplatz.cs</FileName>
@@ -68,7 +66,7 @@
   <Class Name="Fahrzeug.DateinVerwaltung">
     <Position X="1" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>BAAAAAAAAAAAAAACAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DateinVerwaltung.cs</FileName>
     </TypeIdentifier>
   </Class>

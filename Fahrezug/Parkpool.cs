@@ -23,7 +23,7 @@ namespace Fahrzeug
             using (Form4 form4 = new Form4())
             {
                 form4.ShowDialog();
-                if (form4.Parkhaus1 != null)  //weil der Wert nie null darf sein habe ich jetzt einfach eine messagebox bei null als Lösung hinzugefügt
+                if (form4.Parkhaus1 == null)  //weil der Wert nie null darf sein habe ich jetzt einfach eine messagebox bei null als Lösung hinzugefügt
                 {
                     MessageBox.Show("Sie sind wieder im Hauptmenü");
                 }

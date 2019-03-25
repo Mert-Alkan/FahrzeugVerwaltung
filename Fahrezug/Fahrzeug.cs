@@ -7,6 +7,8 @@ namespace Fahrzeug
 {
     public abstract class Fahrzeug
     {
+        private string Parkhaus;
+        protected int Parkplatz;
         protected string Hersteller;
         protected int    Anschaffungspreis;
         protected string Modell;
@@ -65,7 +67,20 @@ namespace Fahrzeug
         {
             get;
         }
+      
 
+        public int MeineParkplatz
+        {
+            get { return Parkplatz; }
+            set { Parkplatz = value; }
+        }
+                                        
+        
 
+        public string MeinParkhaus
+        {
+            get { return Parkhaus; }
+            set { Parkhaus = value; }
+        }
     }
 }

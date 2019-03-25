@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Fahrzeug
 {
     [Serializable]
     public class DateinVerwaltung
     {
+        Fahrzeugpool fahrzeugpool = new Fahrzeugpool();
         public void Speichern()
         {
             try
@@ -20,7 +21,7 @@ namespace Fahrzeug
 
                 stream = new FileStream("FahrzeugChronik.ect", FileMode.OpenOrCreate);
                 BinaryFormatter formatter = new BinaryFormatter();
-                formatter.Serialize(stream, Fahrzeugpool.fahrzeugliste);
+                formatter.Serialize(stream, fahrzeugpool.MeineFahrzeugListe);
                 stream.Close();
             }
             catch (IOException e)
@@ -36,18 +37,20 @@ namespace Fahrzeug
                 BinaryFormatter Formatter = new BinaryFormatter();
                 FileStream stream;
                 stream = new FileStream("FahrzeugChronik.ect", FileMode.Open);
-                Fahrzeugpool.fahrzeugliste = (List<Fahrzeug>)Formatter.Deserialize(stream);
-
-                foreach (Fahrzeug fahrzeug in Fahrzeugpool.fahrzeugliste)
+                fahrzeugpool.MeineFahrzeugListe = (List<Fahrzeug>)Formatter.Deserialize(stream);
+             
+                foreach (Fahrzeug fahrzeug in fahrzeugpool.MeineFahrzeugListe)
                 {
                     Form1 form1 = new Form1();
-                    form1.FahrzeugListBox.Items.Add(Fahrzeugpool.fahrzeugliste);
+                    form1.FahrzeugListBox.Items.Add(fahrzeugpool.MeineFahrzeugListe);
                 }
             }
             catch (IOException e)
             {
                 MessageBox.Show(e.ToString());
             }
+
+       
         }
     }
 }

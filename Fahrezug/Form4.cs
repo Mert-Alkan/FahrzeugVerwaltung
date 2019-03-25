@@ -12,7 +12,7 @@ namespace Fahrzeug
 {
     public partial class Form4 : Form
     {
-        public Parkhaus Parkhaus1;
+        public Parkhaus Parkhaus1 = new Parkhaus();
         public Form4()
         {
             InitializeComponent();
@@ -27,10 +27,11 @@ namespace Fahrzeug
         {
             if (OrttxtBox.Text!="" && AdresseTextBox.Text!= "" && PlzTextBox.Text !="")
             {
+                   
                     Parkhaus1.MeineAdresse = AdresseTextBox.Text;
                     Parkhaus1.Meinort = OrttxtBox.Text;
                     Parkhaus1.MeinPlz = PlzTextBox.Text;
-                    this.Close();
+                    Close();
             }
             else
             {

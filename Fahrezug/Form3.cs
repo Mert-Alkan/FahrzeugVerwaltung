@@ -17,7 +17,7 @@ namespace Fahrzeug
         {
             //Die daten der liste werden in die listbox hinzugefügt
             InitializeComponent();
-            listBox1.DataSource = Fahrzeugpool.fahrzeugliste;
+            listBox1.DataSource = Fahrzeugpool.MeineFahrzeugListe;
             listBox1.DisplayMember = "MeinKennzeichen";
             Form2 form2 = new Form2();
         }
@@ -29,11 +29,12 @@ namespace Fahrzeug
 
         private void Suchen_Klick(object sender, EventArgs e)
         {
+           
             listBox1.SelectedItems.Clear();
-
+           
             for (int i = listBox1.Items.Count -1; i >= 0;i-- )
             {
-                if (listBox1.Items[i].ToString().ToLower().Contains(SuchtextBox.Text.ToLower()))
+                if (Fahrzeugpool.MeineFahrzeugListe[i].MeinKennzeichen.ToString().ToLower().Contains(SuchtextBox.Text.ToLower()))
                 {
                     listBox1.SetSelected(i, true);
                 }

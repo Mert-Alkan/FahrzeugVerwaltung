@@ -8,8 +8,16 @@ namespace Fahrzeug
 {
     public class Fahrzeugpool
     {
-        static public List<Fahrzeug> fahrzeugliste = new List<Fahrzeug>();
-       
+        static private List<Fahrzeug> fahrzeugliste = new List<Fahrzeug>();
+
+        
+
+        public List<Fahrzeug> MeineFahrzeugListe
+        {
+            get { return fahrzeugliste; }
+            set { fahrzeugliste = value; }
+        }
+
         public Fahrzeug Fahrzeug_Hinzufügen1()
         {
             using (Form2 form2 = new Form2())
@@ -21,7 +29,7 @@ namespace Fahrzeug
                 }
                 else
                 {
-                    fahrzeugliste.Add(form2.Fahrzeug1);
+                    fahrzeugliste.Add(form2.Fahrzeug1); 
                 }
                 try
                 {
