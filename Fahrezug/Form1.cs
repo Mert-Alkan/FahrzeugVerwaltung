@@ -7,11 +7,11 @@ namespace Fahrzeug
 {
     public partial class Form1 : Form
     {
-        float tmpSteuer;
+       
         public Parkpool Parkpool = new Parkpool();
         public Fahrzeugpool fahrzeugpool = new Fahrzeugpool();
 
-
+        float tmpSteuer;
 
         public Form1()
         {
@@ -92,9 +92,12 @@ namespace Fahrzeug
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            Fahrzeug Beispiel;
+            DateinVerwaltung dateinVerwaltung = new DateinVerwaltung();
+            dateinVerwaltung.Laden();
+            dateinVerwaltung.Listboxen();
 
-            PKW pKW = new PKW();
+            Fahrzeug Beispiel;
+             PKW pKW = new PKW();
             Beispiel = pKW;
             pKW.MeinHersteller = "VW";
             pKW.MeinModell = "Käfer";
@@ -104,6 +107,8 @@ namespace Fahrzeug
             pKW.MeinHubraum = Convert.ToInt32("1000");
             pKW.MeineLeistung = Convert.ToInt32("30");
             pKW.MeineSchadStoffKlasse = Convert.ToInt32("1");
+         
+          
 
             fahrzeugpool.MeineFahrzeugListe.Add(Beispiel);
             FahrzeugListBox.Items.Add(Beispiel);
@@ -111,15 +116,15 @@ namespace Fahrzeug
         // Es wird Programmiert was passiert wenn man auf den Bearbeiten Button drückt
         private void Bearbeiten_Button(object sender, EventArgs e)
         {
-            if (FahrzeugListBox.SelectedItem != null && FahrzeugListBox.SelectedItem is Fahrzeug)
-            {
-                (FahrzeugListBox.SelectedItem as Fahrzeug).MeinModell = textBox1.Text;
-                (FahrzeugListBox.SelectedItem as Fahrzeug).MeinKennzeichen = textBox2.Text;
-                (FahrzeugListBox.SelectedItem as Fahrzeug).MeinAnschaffungspreis = Convert.ToInt32(textBox3.Text);
-                (FahrzeugListBox.SelectedItem as Fahrzeug).MeineErstzulassung = Convert.ToString(textBox4.Text);
-            }
-            FahrzeugListBox.DisplayMember = null;
-            FahrzeugListBox.DisplayMember = "GetFormatierteAusgabe";
+        //    if (FahrzeugListBox.SelectedItem != null && FahrzeugListBox.SelectedItem is Fahrzeug)
+        //    {
+        //        (FahrzeugListBox.SelectedItem as Fahrzeug).MeinModell = textBox1.Text;
+         //       (FahrzeugListBox.SelectedItem as Fahrzeug).MeinKennzeichen = textBox2.Text;
+          //      (FahrzeugListBox.SelectedItem as Fahrzeug).MeinAnschaffungspreis = Convert.ToInt32(textBox3.Text);
+           //     (FahrzeugListBox.SelectedItem as Fahrzeug).MeineErstzulassung = Convert.ToString(textBox4.Text);
+          //  }
+          //  FahrzeugListBox.DisplayMember = null;
+           // FahrzeugListBox.DisplayMember = "GetFormatierteAusgabe";
         }
 
         private void Suchen_Klick(object sender, EventArgs e)
@@ -129,7 +134,6 @@ namespace Fahrzeug
                 form3.ShowDialog();
             }
         }
-
         private void Berechne_Steuerschuld(object sender, EventArgs e)
         {
             foreach (Fahrzeug f in fahrzeugpool.MeineFahrzeugListe)
@@ -137,11 +141,11 @@ namespace Fahrzeug
                 tmpSteuer += f.Steuerschuld;
             }
             MessageBox.Show(tmpSteuer.ToString(), "Steuerschuld für Alle Fahrzeuge", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-        } //von Mikail hilfe
+        } 
 
         private void FahrzeugHinzufügen_Button_Click(object sender, EventArgs e)
         {
+
             FahrzeugListBox.Items.Add(fahrzeugpool.Fahrzeug_Hinzufügen1());
         }
 
@@ -162,7 +166,32 @@ namespace Fahrzeug
             //nur für mich 
         }
 
-    
-        
+        private void Speichern_Click(object sender, EventArgs e)
+        {
+            DateinVerwaltung dateinVerwaltung = new DateinVerwaltung();
+            dateinVerwaltung.Speichern();
+        }
+
+        private void Laden_Click(object sender, EventArgs e)
+        {
+            DateinVerwaltung dateinVerwaltung = new DateinVerwaltung();
+            dateinVerwaltung.Laden();
+        }
+
+        private void Schließen_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void Speichere_Click(object sender, EventArgs e)
+        {
+            DateinVerwaltung dateinVerwaltung = new DateinVerwaltung();
+            dateinVerwaltung.Speichern();
+        }
+
+        private void Schließe_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

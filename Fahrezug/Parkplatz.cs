@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Fahrzeug
 {
+    [Serializable]
     public class Parkplatz
     {
         public int ParkplatzNr;

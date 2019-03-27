@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Fahrzeug
 {
+    [Serializable]
     public class LKW : Fahrzeug
     {
         private string Achsen;

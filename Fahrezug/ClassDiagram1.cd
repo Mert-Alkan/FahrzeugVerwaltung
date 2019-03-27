@@ -22,7 +22,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Fahrzeug.Fahrzeug">
-    <Position X="3" Y="2.75" Width="1.5" />
+    <Position X="3.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAQAAgAAAgBAgABAGAAABQEIAEwAAAABAAg=</HashCode>
       <FileName>Fahrzeug.cs</FileName>
@@ -30,11 +30,13 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Fahrzeug.Motorräder">
-    <Position X="3.5" Y="7.25" Width="1.5" />
+    <Position X="3.75" Y="7.75" Width="1.5" />
     <InheritanceLine Type="Fahrzeug.Fahrzeug" FixedToPoint="true">
       <Path>
-        <Point X="3.75" Y="7.382" />
-        <Point X="4.125" Y="7.25" />
+        <Point X="4" Y="5.882" />
+        <Point X="4" Y="6.875" />
+        <Point X="4.375" Y="6.875" />
+        <Point X="4.375" Y="7.75" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>

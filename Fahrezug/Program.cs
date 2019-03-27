@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace Fahrzeug
 {
+    [Serializable]
     static class Program
     {
         /// <summary>

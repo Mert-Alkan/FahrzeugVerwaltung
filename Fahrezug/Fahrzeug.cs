@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Fahrzeug
 {
+    [Serializable]
     public abstract class Fahrzeug
     {
         private string Parkhaus;

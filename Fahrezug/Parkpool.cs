@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 namespace Fahrzeug
 {
+    [Serializable]
     public class Parkpool
     {
         public  int Stellplatz_Nr;

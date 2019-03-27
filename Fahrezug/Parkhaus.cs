@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Fahrzeug
 {
+    [Serializable]
     public class Parkhaus
     {
 
@@ -12,10 +13,6 @@ namespace Fahrzeug
         private string Adresse;
         private string Ort;
         private string Plz;
-
-
-
-
 
         public  string MeinPlz
         {

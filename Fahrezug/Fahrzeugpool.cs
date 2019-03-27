@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace Fahrzeug
 {
+    [Serializable]
     public class Fahrzeugpool
     {
         static private List<Fahrzeug> fahrzeugliste = new List<Fahrzeug>();
@@ -40,6 +41,10 @@ namespace Fahrzeug
                     return null;
                 }
             }
+        }
+        public void Steuerschuld()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
