@@ -34,8 +34,9 @@ namespace Fahrzeug
             }
             stream.Close();
         }
-        public void Laden()
+        public List<Fahrzeug> Laden()
         {
+            List<Fahrzeug> tmpList = new List<Fahrzeug>();
             FileStream stream;
 
             stream = new FileStream("FahrzeugChronik.bin", FileMode.OpenOrCreate);
@@ -46,8 +47,7 @@ namespace Fahrzeug
              
                 foreach (Fahrzeug fahrzeug in fahrzeugpool.MeineFahrzeugListe)
                 {
-                    Form1 form1 = new Form1();
-                    form1.FahrzeugListBox.Items.Add(fahrzeugpool.MeineFahrzeugListe);
+                    tmpList.Add(fahrzeug);
                 }
             }
             catch (IOException e)
@@ -55,15 +55,9 @@ namespace Fahrzeug
                 MessageBox.Show(e.ToString());
             }
             stream.Close();
+            return tmpList;
          
         }
 
-        public void Listboxen()
-        {
-            Form1 form1 = new Form1();
-
-            form1.FahrzeugListBox.DataSource = fahrzeugpool.MeineFahrzeugListe;
-            
-        }
     }
 }

@@ -76,8 +76,6 @@ namespace Fahrzeug
             set { Parkplatz = value; }
         }
                                         
-        
-
         public string MeinParkhaus
         {
             get { return Parkhaus; }

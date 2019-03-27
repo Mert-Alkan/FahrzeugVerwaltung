@@ -62,19 +62,20 @@
             // FahrzeugListBox
             // 
             this.FahrzeugListBox.FormattingEnabled = true;
-            this.FahrzeugListBox.Location = new System.Drawing.Point(-1, -1);
-            this.FahrzeugListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.FahrzeugListBox.ItemHeight = 25;
+            this.FahrzeugListBox.Location = new System.Drawing.Point(-2, -2);
+            this.FahrzeugListBox.Margin = new System.Windows.Forms.Padding(4);
             this.FahrzeugListBox.Name = "FahrzeugListBox";
-            this.FahrzeugListBox.Size = new System.Drawing.Size(350, 342);
+            this.FahrzeugListBox.Size = new System.Drawing.Size(696, 654);
             this.FahrzeugListBox.TabIndex = 0;
             this.FahrzeugListBox.SelectedIndexChanged += new System.EventHandler(this.FahrzeugListe_SelectedIndexChanged);
             // 
             // FahrzeugHinzufügen_Button
             // 
-            this.FahrzeugHinzufügen_Button.Location = new System.Drawing.Point(386, 370);
-            this.FahrzeugHinzufügen_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.FahrzeugHinzufügen_Button.Location = new System.Drawing.Point(772, 712);
+            this.FahrzeugHinzufügen_Button.Margin = new System.Windows.Forms.Padding(4);
             this.FahrzeugHinzufügen_Button.Name = "FahrzeugHinzufügen_Button";
-            this.FahrzeugHinzufügen_Button.Size = new System.Drawing.Size(172, 21);
+            this.FahrzeugHinzufügen_Button.Size = new System.Drawing.Size(344, 40);
             this.FahrzeugHinzufügen_Button.TabIndex = 1;
             this.FahrzeugHinzufügen_Button.Text = "Fahrzeug Hinzufügen";
             this.FahrzeugHinzufügen_Button.UseVisualStyleBackColor = true;
@@ -82,10 +83,10 @@
             // 
             // LöschButton
             // 
-            this.LöschButton.Location = new System.Drawing.Point(290, 370);
-            this.LöschButton.Margin = new System.Windows.Forms.Padding(2);
+            this.LöschButton.Location = new System.Drawing.Point(580, 712);
+            this.LöschButton.Margin = new System.Windows.Forms.Padding(4);
             this.LöschButton.Name = "LöschButton";
-            this.LöschButton.Size = new System.Drawing.Size(74, 21);
+            this.LöschButton.Size = new System.Drawing.Size(148, 40);
             this.LöschButton.TabIndex = 2;
             this.LöschButton.Text = "Löschen ";
             this.LöschButton.UseVisualStyleBackColor = true;
@@ -93,74 +94,82 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(453, 16);
+            this.textBox1.Location = new System.Drawing.Point(906, 31);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(6);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(196, 31);
             this.textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(453, 35);
+            this.textBox2.Location = new System.Drawing.Point(906, 67);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(6);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(196, 31);
             this.textBox2.TabIndex = 5;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(453, 56);
+            this.textBox3.Location = new System.Drawing.Point(906, 108);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(6);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.Size = new System.Drawing.Size(196, 31);
             this.textBox3.TabIndex = 6;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(453, 79);
+            this.textBox4.Location = new System.Drawing.Point(906, 152);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(6);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.Size = new System.Drawing.Size(196, 31);
             this.textBox4.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(352, 19);
+            this.label1.Location = new System.Drawing.Point(704, 37);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(76, 25);
             this.label1.TabIndex = 8;
             this.label1.Text = "Modell";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(352, 38);
+            this.label2.Location = new System.Drawing.Point(704, 73);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.Size = new System.Drawing.Size(137, 25);
             this.label2.TabIndex = 9;
             this.label2.Text = "Kennzeichen";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(352, 59);
+            this.label3.Location = new System.Drawing.Point(704, 113);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 13);
+            this.label3.Size = new System.Drawing.Size(190, 25);
             this.label3.TabIndex = 10;
             this.label3.Text = "Anschaffungspreis";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(355, 79);
+            this.label4.Location = new System.Drawing.Point(710, 152);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 13);
+            this.label4.Size = new System.Drawing.Size(148, 25);
             this.label4.TabIndex = 11;
             this.label4.Text = "Erstzulassung";
             // 
             // BearbeitenButton
             // 
-            this.BearbeitenButton.Location = new System.Drawing.Point(202, 370);
-            this.BearbeitenButton.Margin = new System.Windows.Forms.Padding(2);
+            this.BearbeitenButton.Location = new System.Drawing.Point(404, 712);
+            this.BearbeitenButton.Margin = new System.Windows.Forms.Padding(4);
             this.BearbeitenButton.Name = "BearbeitenButton";
-            this.BearbeitenButton.Size = new System.Drawing.Size(73, 21);
+            this.BearbeitenButton.Size = new System.Drawing.Size(146, 40);
             this.BearbeitenButton.TabIndex = 12;
             this.BearbeitenButton.Text = "bearbeiten";
             this.BearbeitenButton.UseVisualStyleBackColor = true;
@@ -168,9 +177,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(99, 368);
+            this.button1.Location = new System.Drawing.Point(198, 708);
+            this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 23);
+            this.button1.Size = new System.Drawing.Size(172, 44);
             this.button1.TabIndex = 13;
             this.button1.Text = "Suchen";
             this.button1.UseVisualStyleBackColor = true;
@@ -178,9 +188,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 368);
+            this.button2.Location = new System.Drawing.Point(24, 708);
+            this.button2.Margin = new System.Windows.Forms.Padding(6);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(150, 44);
             this.button2.TabIndex = 14;
             this.button2.Text = "berechne";
             this.button2.UseVisualStyleBackColor = true;
@@ -188,9 +199,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(598, 367);
+            this.button3.Location = new System.Drawing.Point(1196, 706);
+            this.button3.Margin = new System.Windows.Forms.Padding(6);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(150, 44);
             this.button3.TabIndex = 15;
             this.button3.Text = "Parkhaus";
             this.button3.UseVisualStyleBackColor = true;
@@ -199,57 +211,57 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(352, 99);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(704, 190);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 13);
+            this.label5.Size = new System.Drawing.Size(148, 25);
             this.label5.TabIndex = 16;
             this.label5.Text = "Achsenanzahl";
             this.label5.Click += new System.EventHandler(this.Label5_Click);
             // 
             // AchsenTextBox
             // 
-            this.AchsenTextBox.Location = new System.Drawing.Point(453, 99);
-            this.AchsenTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.AchsenTextBox.Location = new System.Drawing.Point(906, 190);
+            this.AchsenTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.AchsenTextBox.Name = "AchsenTextBox";
-            this.AchsenTextBox.Size = new System.Drawing.Size(100, 20);
+            this.AchsenTextBox.Size = new System.Drawing.Size(196, 31);
             this.AchsenTextBox.TabIndex = 17;
             // 
             // ZuladungTextBox
             // 
-            this.ZuladungTextBox.Location = new System.Drawing.Point(453, 119);
-            this.ZuladungTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ZuladungTextBox.Location = new System.Drawing.Point(906, 229);
+            this.ZuladungTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ZuladungTextBox.Name = "ZuladungTextBox";
-            this.ZuladungTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ZuladungTextBox.Size = new System.Drawing.Size(196, 31);
             this.ZuladungTextBox.TabIndex = 18;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(352, 120);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(704, 231);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.Size = new System.Drawing.Size(102, 25);
             this.label6.TabIndex = 19;
             this.label6.Text = "Zuladung";
             // 
             // Hubraumlabel
             // 
             this.Hubraumlabel.AutoSize = true;
-            this.Hubraumlabel.Location = new System.Drawing.Point(352, 139);
-            this.Hubraumlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Hubraumlabel.Location = new System.Drawing.Point(704, 267);
+            this.Hubraumlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Hubraumlabel.Name = "Hubraumlabel";
-            this.Hubraumlabel.Size = new System.Drawing.Size(50, 13);
+            this.Hubraumlabel.Size = new System.Drawing.Size(99, 25);
             this.Hubraumlabel.TabIndex = 20;
             this.Hubraumlabel.Text = "Hubraum";
             // 
             // Leistunglabel
             // 
             this.Leistunglabel.AutoSize = true;
-            this.Leistunglabel.Location = new System.Drawing.Point(352, 161);
-            this.Leistunglabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Leistunglabel.Location = new System.Drawing.Point(704, 310);
+            this.Leistunglabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Leistunglabel.Name = "Leistunglabel";
-            this.Leistunglabel.Size = new System.Drawing.Size(47, 13);
+            this.Leistunglabel.Size = new System.Drawing.Size(94, 25);
             this.Leistunglabel.TabIndex = 21;
             this.Leistunglabel.Text = "Leistung";
             this.Leistunglabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -257,60 +269,61 @@
             // SchaddLabel
             // 
             this.SchaddLabel.AutoSize = true;
-            this.SchaddLabel.Location = new System.Drawing.Point(352, 181);
-            this.SchaddLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SchaddLabel.Location = new System.Drawing.Point(704, 348);
+            this.SchaddLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SchaddLabel.Name = "SchaddLabel";
-            this.SchaddLabel.Size = new System.Drawing.Size(88, 13);
+            this.SchaddLabel.Size = new System.Drawing.Size(176, 25);
             this.SchaddLabel.TabIndex = 22;
             this.SchaddLabel.Text = "Schadstoffklasse";
             // 
             // HubText
             // 
-            this.HubText.Location = new System.Drawing.Point(453, 139);
-            this.HubText.Margin = new System.Windows.Forms.Padding(2);
+            this.HubText.Location = new System.Drawing.Point(906, 267);
+            this.HubText.Margin = new System.Windows.Forms.Padding(4);
             this.HubText.Name = "HubText";
-            this.HubText.Size = new System.Drawing.Size(100, 20);
+            this.HubText.Size = new System.Drawing.Size(196, 31);
             this.HubText.TabIndex = 23;
             // 
             // Leistungstext
             // 
-            this.Leistungstext.Location = new System.Drawing.Point(453, 161);
-            this.Leistungstext.Margin = new System.Windows.Forms.Padding(2);
+            this.Leistungstext.Location = new System.Drawing.Point(906, 310);
+            this.Leistungstext.Margin = new System.Windows.Forms.Padding(4);
             this.Leistungstext.Name = "Leistungstext";
-            this.Leistungstext.Size = new System.Drawing.Size(100, 20);
+            this.Leistungstext.Size = new System.Drawing.Size(196, 31);
             this.Leistungstext.TabIndex = 24;
             // 
             // SchadstoffklasseTextBox
             // 
-            this.SchadstoffklasseTextBox.Location = new System.Drawing.Point(453, 181);
-            this.SchadstoffklasseTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.SchadstoffklasseTextBox.Location = new System.Drawing.Point(906, 348);
+            this.SchadstoffklasseTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.SchadstoffklasseTextBox.Name = "SchadstoffklasseTextBox";
-            this.SchadstoffklasseTextBox.Size = new System.Drawing.Size(100, 20);
+            this.SchadstoffklasseTextBox.Size = new System.Drawing.Size(196, 31);
             this.SchadstoffklasseTextBox.TabIndex = 25;
             // 
             // SteuerLabel
             // 
             this.SteuerLabel.AutoSize = true;
-            this.SteuerLabel.Location = new System.Drawing.Point(352, 203);
-            this.SteuerLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SteuerLabel.Location = new System.Drawing.Point(704, 390);
+            this.SteuerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SteuerLabel.Name = "SteuerLabel";
-            this.SteuerLabel.Size = new System.Drawing.Size(38, 13);
+            this.SteuerLabel.Size = new System.Drawing.Size(75, 25);
             this.SteuerLabel.TabIndex = 26;
             this.SteuerLabel.Text = "Steuer";
             // 
             // SteuertextBox
             // 
-            this.SteuertextBox.Location = new System.Drawing.Point(453, 203);
-            this.SteuertextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.SteuertextBox.Location = new System.Drawing.Point(906, 390);
+            this.SteuertextBox.Margin = new System.Windows.Forms.Padding(4);
             this.SteuertextBox.Name = "SteuertextBox";
-            this.SteuertextBox.Size = new System.Drawing.Size(100, 20);
+            this.SteuertextBox.Size = new System.Drawing.Size(196, 31);
             this.SteuertextBox.TabIndex = 27;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 415);
+            this.button4.Location = new System.Drawing.Point(24, 798);
+            this.button4.Margin = new System.Windows.Forms.Padding(6);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(150, 44);
             this.button4.TabIndex = 28;
             this.button4.Text = "Speicher";
             this.button4.UseVisualStyleBackColor = true;
@@ -318,9 +331,10 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(99, 414);
+            this.button5.Location = new System.Drawing.Point(198, 796);
+            this.button5.Margin = new System.Windows.Forms.Padding(6);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(150, 44);
             this.button5.TabIndex = 29;
             this.button5.Text = "Schließen";
             this.button5.UseVisualStyleBackColor = true;
@@ -328,9 +342,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 503);
+            this.ClientSize = new System.Drawing.Size(1440, 967);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.SteuertextBox);
@@ -360,7 +374,7 @@
             this.Controls.Add(this.LöschButton);
             this.Controls.Add(this.FahrzeugHinzufügen_Button);
             this.Controls.Add(this.FahrzeugListBox);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "SpeichernButton";
             this.Load += new System.EventHandler(this.Form1_Load);

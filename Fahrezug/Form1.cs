@@ -7,9 +7,10 @@ namespace Fahrzeug
 {
     public partial class Form1 : Form
     {
-       
+
         public Parkpool Parkpool = new Parkpool();
         public Fahrzeugpool fahrzeugpool = new Fahrzeugpool();
+        DateinVerwaltung dateinVerwaltung = new DateinVerwaltung();
 
         float tmpSteuer;
 
@@ -17,7 +18,20 @@ namespace Fahrzeug
         {
             InitializeComponent();
             FahrzeugListBox.DisplayMember = "MeinKennzeichen";  //Diese Eigenschaft  soll in der fahrzeug liste angezigt werden
+            GespeicherteFahrzeugeLaden();                       //Startet die methode 
         }
+
+        void GespeicherteFahrzeugeLaden()
+        { 
+            List<Fahrzeug> tmpList = dateinVerwaltung.Laden();          //holt die daten aus  der tmpliste 
+
+            foreach (Fahrzeug f in tmpList)
+            {
+                FahrzeugListBox.Items.Add(f);                       //fügt die Daten von f in die listbox ein
+            }
+
+        }
+
         //ruft form 2 auf und fügt die Datein in die FahrzeuglistBox
         private void FahrzeugListe_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -37,7 +51,8 @@ namespace Fahrzeug
                 ZuladungTextBox.Text = Convert.ToString(LKW.MeineZuladung);
                 SteuertextBox.Text = Convert.ToString(LKW.Steuerschuld);
 
-                ; }
+                ;
+            }
             if (FahrzeugListBox.SelectedItem != null && FahrzeugListBox.SelectedItem is PKW)
             {
                 AchsenTextBox.Clear();
@@ -74,7 +89,7 @@ namespace Fahrzeug
         // Es wird programmiert was passiert, wenn man auf den LöschButton klickt 
         private void LöschButton_Click(object sender, EventArgs e)
         {
-            if (FahrzeugListBox.SelectedItem!= null)
+            if (FahrzeugListBox.SelectedItem != null)
             {
                 fahrzeugpool.MeineFahrzeugListe.RemoveAt(FahrzeugListBox.SelectedIndex);
             }
@@ -89,15 +104,14 @@ namespace Fahrzeug
             Leistungstext.Clear();
             AchsenTextBox.Clear();
             SteuertextBox.Clear();
+            ZuladungTextBox.Clear();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            DateinVerwaltung dateinVerwaltung = new DateinVerwaltung();
-            dateinVerwaltung.Laden();
-            dateinVerwaltung.Listboxen();
+
 
             Fahrzeug Beispiel;
-             PKW pKW = new PKW();
+            PKW pKW = new PKW();
             Beispiel = pKW;
             pKW.MeinHersteller = "VW";
             pKW.MeinModell = "Käfer";
@@ -107,8 +121,8 @@ namespace Fahrzeug
             pKW.MeinHubraum = Convert.ToInt32("1000");
             pKW.MeineLeistung = Convert.ToInt32("30");
             pKW.MeineSchadStoffKlasse = Convert.ToInt32("1");
-         
-          
+
+
 
             fahrzeugpool.MeineFahrzeugListe.Add(Beispiel);
             FahrzeugListBox.Items.Add(Beispiel);
@@ -116,15 +130,15 @@ namespace Fahrzeug
         // Es wird Programmiert was passiert wenn man auf den Bearbeiten Button drückt
         private void Bearbeiten_Button(object sender, EventArgs e)
         {
-        //    if (FahrzeugListBox.SelectedItem != null && FahrzeugListBox.SelectedItem is Fahrzeug)
-        //    {
-        //        (FahrzeugListBox.SelectedItem as Fahrzeug).MeinModell = textBox1.Text;
-         //       (FahrzeugListBox.SelectedItem as Fahrzeug).MeinKennzeichen = textBox2.Text;
-          //      (FahrzeugListBox.SelectedItem as Fahrzeug).MeinAnschaffungspreis = Convert.ToInt32(textBox3.Text);
-           //     (FahrzeugListBox.SelectedItem as Fahrzeug).MeineErstzulassung = Convert.ToString(textBox4.Text);
-          //  }
-          //  FahrzeugListBox.DisplayMember = null;
-           // FahrzeugListBox.DisplayMember = "GetFormatierteAusgabe";
+            //    if (FahrzeugListBox.SelectedItem != null && FahrzeugListBox.SelectedItem is Fahrzeug)
+            //    {
+            //        (FahrzeugListBox.SelectedItem as Fahrzeug).MeinModell = textBox1.Text;
+            //       (FahrzeugListBox.SelectedItem as Fahrzeug).MeinKennzeichen = textBox2.Text;
+            //      (FahrzeugListBox.SelectedItem as Fahrzeug).MeinAnschaffungspreis = Convert.ToInt32(textBox3.Text);
+            //     (FahrzeugListBox.SelectedItem as Fahrzeug).MeineErstzulassung = Convert.ToString(textBox4.Text);
+            //  }
+            //  FahrzeugListBox.DisplayMember = null;
+            // FahrzeugListBox.DisplayMember = "GetFormatierteAusgabe";
         }
 
         private void Suchen_Klick(object sender, EventArgs e)
@@ -141,7 +155,7 @@ namespace Fahrzeug
                 tmpSteuer += f.Steuerschuld;
             }
             MessageBox.Show(tmpSteuer.ToString(), "Steuerschuld für Alle Fahrzeuge", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        } 
+        }
 
         private void FahrzeugHinzufügen_Button_Click(object sender, EventArgs e)
         {
@@ -193,5 +207,7 @@ namespace Fahrzeug
         {
             Close();
         }
+
+
     }
 }

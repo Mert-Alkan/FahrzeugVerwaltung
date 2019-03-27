@@ -15,8 +15,7 @@ namespace Fahrzeug
         public Fahrzeug Fahrzeug1;
         public Form2()
         {
-            InitializeComponent();
-            
+            InitializeComponent();   
         }
         //Eigenschfaten für die Klassen wurden hinzugefügt
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
