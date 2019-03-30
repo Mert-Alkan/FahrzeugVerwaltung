@@ -12,15 +12,10 @@ namespace Fahrzeug
 
         public override float Steuerschuld => (float)(Hubraum + 99) / 100 * 20;    //(Hubraum+99) / 100 * 20 Euro  von Mikail 
 
-
-
-
         public int MeineHubraume 
         {
             get { return Hubraum; }
             set { Hubraum = value; }
         }
-
-
     }
 }

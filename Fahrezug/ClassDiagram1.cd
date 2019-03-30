@@ -10,7 +10,7 @@
   <Class Name="Fahrzeug.Fahrzeugpool">
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAQAAAAACAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAEAQAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Fahrzeugpool.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -47,7 +47,7 @@
   <Class Name="Fahrzeug.Parkhaus">
     <Position X="7" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAQAAAAAACAAAAAAAABgAAAAQAAAEAA=</HashCode>
+      <HashCode>AAgQAAAAEAAAAACAgABEAAgAAAAACABgAAAAQAAIAAA=</HashCode>
       <FileName>Parkhaus.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -56,13 +56,6 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAQAAAACAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Parkpool.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Fahrzeug.Parkplatz">
-    <Position X="11" Y="0.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>ABAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Parkplatz.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Fahrzeug.DateinVerwaltung">

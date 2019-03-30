@@ -11,18 +11,25 @@ namespace Fahrzeug
         public Parkpool Parkpool = new Parkpool();
         public Fahrzeugpool fahrzeugpool = new Fahrzeugpool();
         DateinVerwaltung dateinVerwaltung = new DateinVerwaltung();
-
+        public Parkhaus Parkhaus1 = new Parkhaus();
         float tmpSteuer;
+        CurrencyManager cmParkhaus;
 
         public Form1()
         {
             InitializeComponent();
             FahrzeugListBox.DisplayMember = "MeinKennzeichen";  //Diese Eigenschaft  soll in der fahrzeug liste angezigt werden
             GespeicherteFahrzeugeLaden();                       //Startet die methode 
+
+            #region Parkhaus-Tab
+            dataGridView1.DataSource = Parkpool.parkhaus;
+            cmParkhaus = (CurrencyManager)dataGridView1.BindingContext[Parkpool.parkhaus];
+            #endregion
+
         }
 
         void GespeicherteFahrzeugeLaden()
-        { 
+        {
             List<Fahrzeug> tmpList = dateinVerwaltung.Laden();          //holt die daten aus  der tmpliste 
 
             foreach (Fahrzeug f in tmpList)
@@ -47,11 +54,9 @@ namespace Fahrzeug
                 textBox2.Text = LKW.MeinKennzeichen;
                 textBox3.Text = Convert.ToString(LKW.MeinAnschaffungspreis);
                 textBox4.Text = Convert.ToString(LKW.MeineErstzulassung);
-                AchsenTextBox.Text = LKW.MeineAchsen;
+                AchsenTextBox.Text =Convert.ToString(LKW.MeineAchsen);
                 ZuladungTextBox.Text = Convert.ToString(LKW.MeineZuladung);
                 SteuertextBox.Text = Convert.ToString(LKW.Steuerschuld);
-
-                ;
             }
             if (FahrzeugListBox.SelectedItem != null && FahrzeugListBox.SelectedItem is PKW)
             {
@@ -108,26 +113,10 @@ namespace Fahrzeug
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
-
-            Fahrzeug Beispiel;
-            PKW pKW = new PKW();
-            Beispiel = pKW;
-            pKW.MeinHersteller = "VW";
-            pKW.MeinModell = "Käfer";
-            pKW.MeinKennzeichen = "K-GS-01";
-            pKW.MeineErstzulassung = "1965";
-            pKW.MeinAnschaffungspreis = Convert.ToInt32("9999");
-            pKW.MeinHubraum = Convert.ToInt32("1000");
-            pKW.MeineLeistung = Convert.ToInt32("30");
-            pKW.MeineSchadStoffKlasse = Convert.ToInt32("1");
-
-
-
-            fahrzeugpool.MeineFahrzeugListe.Add(Beispiel);
-            FahrzeugListBox.Items.Add(Beispiel);
+            HinzufügenStandardFahrzeuge();
+            FahrzeugBeispiell();
         }
-        // Es wird Programmiert was passiert wenn man auf den Bearbeiten Button drückt
+        // Es wird Programmiert was passiert wenn man auf den Bearbeiten Button drückt  //geht nicht mehr 
         private void Bearbeiten_Button(object sender, EventArgs e)
         {
             //    if (FahrzeugListBox.SelectedItem != null && FahrzeugListBox.SelectedItem is Fahrzeug)
@@ -158,8 +147,7 @@ namespace Fahrzeug
         }
 
         private void FahrzeugHinzufügen_Button_Click(object sender, EventArgs e)
-        {
-
+        {         
             FahrzeugListBox.Items.Add(fahrzeugpool.Fahrzeug_Hinzufügen1());
         }
 
@@ -174,12 +162,10 @@ namespace Fahrzeug
         {
 
         }
-
         private void BeispielDaten()
         {
             //nur für mich 
         }
-
         private void Speichern_Click(object sender, EventArgs e)
         {
             DateinVerwaltung dateinVerwaltung = new DateinVerwaltung();
@@ -208,6 +194,112 @@ namespace Fahrzeug
             Close();
         }
 
+        private void TabPage1_Click(object sender, EventArgs e)
+        {
 
+        }
+        private void HinzufügeButton(object sender, EventArgs e)
+        {
+            Parkpool.parkhaus.Add(new Parkhaus());
+            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].Adresse= AdresseTextBox.Text;
+            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].Ort= OrttxtBox.Text;
+            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].Postleitzahl= PlzTextBox.Text;
+            //Fügt die Stellplätze in die List hinzu
+            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].FüllenListPKW(Convert.ToInt32(msdPKW.Text));
+            AdresseTextBox.Clear();
+            OrttxtBox.Clear();
+            PlzTextBox.Clear();
+            msdPKW.Clear();
+            maskedTextBox2.Clear();
+            maskedTextBox3.Clear();
+            //damit die Daten angezeit werden
+            cmParkhaus.Refresh();
+        }
+        private void TabPage2_Click(object sender, EventArgs e)
+        {
+          
+        }
+       
+        private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        void FahrzeugBeispiell()
+        {
+            //Parkhaus1(Ort, Plz, Straße): Köln, 51105, Westerwaldstr. 99
+            Parkpool.parkhaus.Add(new Parkhaus());
+            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].Ort = "Köln";
+            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].Postleitzahl = "51105";
+            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].Adresse= "Westerwaldstr. 99";
+            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].FüllenListPKW(98);
+            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].FüllenListLKW(98);
+            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].FüllenListMotorrad(98);
+        }
+        private void HinzufügenStandardFahrzeuge()
+        {
+                Fahrzeug fahrzeug;
+                 //PKWs
+                fahrzeug = new PKW();
+                fahrzeugpool.MeineFahrzeugListe.Add(fahrzeug);
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinFahrzeug = "PKW";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinAnschaffungspreis = 9999;
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeineErstzulassung = "1965";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinHersteller = "VW";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinKennzeichen = "K-GS-01";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinModell = "Käfer";
+                ((PKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeinHubraum = 1000;
+                ((PKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeineLeistung = 30;
+                ((PKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeineSchadStoffKlasse = 1;
+                fahrzeug = new PKW();
+                fahrzeugpool.MeineFahrzeugListe.Add(fahrzeug);
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinFahrzeug = "PKW";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinAnschaffungspreis = 12000;
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeineErstzulassung = "1964";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinHersteller = "Opel";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinKennzeichen = "K-GS-02";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinModell = "Kadett";
+                ((PKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeinHubraum = 1600;
+                ((PKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeineLeistung = 60;
+                ((PKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeineSchadStoffKlasse = 2;
+                //Motorrad
+                fahrzeug = new Motorräder();
+                fahrzeugpool.MeineFahrzeugListe.Add(fahrzeug);
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinFahrzeug = "Motorrad";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinAnschaffungspreis = 6000;
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeineErstzulassung = "1999";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinHersteller = "BMW";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinKennzeichen = "K-GS-03";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinModell = "R1200r";
+                ((Motorräder)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeineHubraume = 1170;
+                //LKW
+                fahrzeug = new LKW();
+                fahrzeugpool.MeineFahrzeugListe.Add(fahrzeug);
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinFahrzeug = "LKW";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinAnschaffungspreis = 23000;
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeineErstzulassung = "1960";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinHersteller = "Mercedes";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinKennzeichen = "K-GS-04";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinModell = "LG 315";
+                ((LKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeineZuladung = 5500;
+                ((LKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeineAchsen = "2";
+
+                foreach (Fahrzeug f in fahrzeugpool.MeineFahrzeugListe)
+                {
+                    FahrzeugListBox.Items.Add(f);                       //fügt die Daten von f in die listbox ein
+                }
+               
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           textBox5.Text= String.Format("{0} | {1} | {2}", fahrzeugpool.MeineFahrzeugListe[comboBox1.SelectedIndex].MeinFahrzeug,
+           fahrzeugpool.MeineFahrzeugListe[comboBox1.SelectedIndex].MeinHersteller, fahrzeugpool.MeineFahrzeugListe[comboBox1.SelectedIndex].MeinModell);
+           comboBox1.SelectedIndex = -1;
+        }
     }
 }

@@ -77,7 +77,7 @@ namespace Fahrzeug
 
         public void Hinzufügen_Click(object sender, EventArgs e)
         {
-                if (Hersteller.Text != "" && Fahrzeugcmbbx.Text == "PKW" && KennzeichenTextBox.Text != "" && AnschaffungspreisTextBox.Text != "" && ErstzulassungTextBox.Text != "")
+                if (Hersteller.Text != "" && Fahrzeugcmbbx.Text == "PKW" && KennzeichenTextBox.Text != "" && AnschaffungspreisTextBox.Text != "" && ErstzulassungTextBox.Text !="" )
                 {
                 PKW pKW = new PKW();
                 Fahrzeug1 = pKW;
@@ -86,7 +86,6 @@ namespace Fahrzeug
                     pKW.MeinHersteller = HerstellerTextBox.Text;
                     pKW.MeineErstzulassung = ErstzulassungTextBox.Text;
                     pKW.MeinFahrzeug = Fahrzeugcmbbx.Text;
-                    
                 try
                 {
                     pKW.MeineSchadStoffKlasse = Convert.ToInt32(SchadstoffKlasseText.Text);
@@ -112,7 +111,7 @@ namespace Fahrzeug
                    lKW.MeinFahrzeug = Fahrzeugcmbbx.Text;
                 try
                 {
-                    lKW.MeineZuladung = Convert.ToInt32(txtZuladung.Text);
+                    lKW.MeineZuladung =Convert.ToInt32(txtZuladung.Text);
                     lKW.MeineAchsen = AchsenAnzahlTextBox.Text;
                     lKW.MeinAnschaffungspreis = Convert.ToInt32(AnschaffungspreisTextBox.Text);
                 }
@@ -132,12 +131,12 @@ namespace Fahrzeug
                     motorräder.MeinHersteller = HerstellerTextBox.Text;
                     motorräder.MeineErstzulassung = ErstzulassungTextBox.Text;
                     motorräder.MeinFahrzeug = Fahrzeugcmbbx.Text;
-                    
+                   
+
                 try
                 {
                     motorräder.MeineHubraume = Convert.ToInt32(HubTextBox.Text);
                     motorräder.MeinAnschaffungspreis = Convert.ToInt32(AnschaffungspreisTextBox.Text);
-
                 }
                 catch (Exception)
                 {
@@ -176,6 +175,11 @@ namespace Fahrzeug
         }
 
         private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

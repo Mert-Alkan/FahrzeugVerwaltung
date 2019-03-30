@@ -11,8 +11,6 @@ namespace Fahrzeug
     {
         static private List<Fahrzeug> fahrzeugliste = new List<Fahrzeug>();
 
-        
-
         public List<Fahrzeug> MeineFahrzeugListe
         {
             get { return fahrzeugliste; }
@@ -24,13 +22,9 @@ namespace Fahrzeug
             using (Form2 form2 = new Form2())
             {
                 form2.ShowDialog();
-                if (form2.Fahrzeug1 == null)  //weil der Wert nie null darf sein habe ich jetzt einfach eine messagebox bei null als Lösung hinzugefügt
+                if (form2.Fahrzeug1 != null)  
                 {
-                    MessageBox.Show("Sie sind wieder im Hauptmenü");
-                }
-                else
-                {
-                    fahrzeugliste.Add(form2.Fahrzeug1); 
+                    fahrzeugliste.Add(form2.Fahrzeug1);
                 }
                 try
                 {

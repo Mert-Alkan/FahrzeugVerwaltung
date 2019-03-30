@@ -52,6 +52,7 @@
             this.LeistungLabel = new System.Windows.Forms.Label();
             this.SchadstoffKlasseLabel = new System.Windows.Forms.Label();
             this.Hinzufügen = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,26 +86,28 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(134, 79);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 11;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(854, 694);
+            this.tableLayoutPanel1.RowCount = 13;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(854, 539);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel1_Paint);
             // 
             // SchadstoffKlasseText
             // 
             this.SchadstoffKlasseText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SchadstoffKlasseText.Location = new System.Drawing.Point(542, 658);
+            this.SchadstoffKlasseText.Location = new System.Drawing.Point(542, 422);
             this.SchadstoffKlasseText.Margin = new System.Windows.Forms.Padding(6);
             this.SchadstoffKlasseText.Name = "SchadstoffKlasseText";
             this.SchadstoffKlasseText.Size = new System.Drawing.Size(196, 31);
@@ -114,7 +117,7 @@
             // 
             this.HubraumLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.HubraumLabel.AutoSize = true;
-            this.HubraumLabel.Location = new System.Drawing.Point(164, 548);
+            this.HubraumLabel.Location = new System.Drawing.Point(164, 339);
             this.HubraumLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.HubraumLabel.Name = "HubraumLabel";
             this.HubraumLabel.Size = new System.Drawing.Size(99, 25);
@@ -124,7 +127,7 @@
             // AchsenAnzahlTextBox
             // 
             this.AchsenAnzahlTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AchsenAnzahlTextBox.Location = new System.Drawing.Point(545, 479);
+            this.AchsenAnzahlTextBox.Location = new System.Drawing.Point(545, 293);
             this.AchsenAnzahlTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.AchsenAnzahlTextBox.Name = "AchsenAnzahlTextBox";
             this.AchsenAnzahlTextBox.Size = new System.Drawing.Size(190, 31);
@@ -133,7 +136,7 @@
             // txtZuladung
             // 
             this.txtZuladung.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtZuladung.Location = new System.Drawing.Point(545, 413);
+            this.txtZuladung.Location = new System.Drawing.Point(545, 250);
             this.txtZuladung.Margin = new System.Windows.Forms.Padding(6);
             this.txtZuladung.Name = "txtZuladung";
             this.txtZuladung.Size = new System.Drawing.Size(190, 31);
@@ -143,7 +146,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(118, 284);
+            this.label4.Location = new System.Drawing.Point(118, 169);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(190, 25);
@@ -154,7 +157,7 @@
             // 
             this.ZuladungLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ZuladungLabel.AutoSize = true;
-            this.ZuladungLabel.Location = new System.Drawing.Point(162, 416);
+            this.ZuladungLabel.Location = new System.Drawing.Point(162, 253);
             this.ZuladungLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.ZuladungLabel.Name = "ZuladungLabel";
             this.ZuladungLabel.Size = new System.Drawing.Size(102, 25);
@@ -164,7 +167,7 @@
             // AnschaffungspreisTextBox
             // 
             this.AnschaffungspreisTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AnschaffungspreisTextBox.Location = new System.Drawing.Point(549, 281);
+            this.AnschaffungspreisTextBox.Location = new System.Drawing.Point(549, 166);
             this.AnschaffungspreisTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.AnschaffungspreisTextBox.Name = "AnschaffungspreisTextBox";
             this.AnschaffungspreisTextBox.Size = new System.Drawing.Size(182, 31);
@@ -173,7 +176,7 @@
             // KennzeichenTextBox
             // 
             this.KennzeichenTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.KennzeichenTextBox.Location = new System.Drawing.Point(548, 215);
+            this.KennzeichenTextBox.Location = new System.Drawing.Point(548, 127);
             this.KennzeichenTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.KennzeichenTextBox.Name = "KennzeichenTextBox";
             this.KennzeichenTextBox.Size = new System.Drawing.Size(184, 31);
@@ -182,7 +185,7 @@
             // ErstzulassungTextBox
             // 
             this.ErstzulassungTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ErstzulassungTextBox.Location = new System.Drawing.Point(546, 347);
+            this.ErstzulassungTextBox.Location = new System.Drawing.Point(546, 207);
             this.ErstzulassungTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.ErstzulassungTextBox.Name = "ErstzulassungTextBox";
             this.ErstzulassungTextBox.Size = new System.Drawing.Size(188, 31);
@@ -192,7 +195,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(139, 350);
+            this.label5.Location = new System.Drawing.Point(139, 210);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(148, 25);
@@ -202,7 +205,7 @@
             // ModellTextBox
             // 
             this.ModellTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ModellTextBox.Location = new System.Drawing.Point(548, 149);
+            this.ModellTextBox.Location = new System.Drawing.Point(548, 88);
             this.ModellTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ModellTextBox.Name = "ModellTextBox";
             this.ModellTextBox.Size = new System.Drawing.Size(184, 31);
@@ -212,7 +215,7 @@
             // 
             this.Hersteller.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Hersteller.AutoSize = true;
-            this.Hersteller.Location = new System.Drawing.Point(162, 20);
+            this.Hersteller.Location = new System.Drawing.Point(162, 10);
             this.Hersteller.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Hersteller.Name = "Hersteller";
             this.Hersteller.Size = new System.Drawing.Size(103, 25);
@@ -223,7 +226,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(161, 86);
+            this.label1.Location = new System.Drawing.Point(161, 52);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 25);
@@ -239,7 +242,7 @@
             "PKW",
             "LKW",
             "Motorräder"});
-            this.Fahrzeugcmbbx.Location = new System.Drawing.Point(548, 16);
+            this.Fahrzeugcmbbx.Location = new System.Drawing.Point(548, 6);
             this.Fahrzeugcmbbx.Margin = new System.Windows.Forms.Padding(6);
             this.Fahrzeugcmbbx.Name = "Fahrzeugcmbbx";
             this.Fahrzeugcmbbx.Size = new System.Drawing.Size(184, 33);
@@ -249,7 +252,7 @@
             // HerstellerTextBox
             // 
             this.HerstellerTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.HerstellerTextBox.Location = new System.Drawing.Point(548, 83);
+            this.HerstellerTextBox.Location = new System.Drawing.Point(548, 49);
             this.HerstellerTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.HerstellerTextBox.Name = "HerstellerTextBox";
             this.HerstellerTextBox.Size = new System.Drawing.Size(184, 31);
@@ -259,7 +262,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(175, 152);
+            this.label2.Location = new System.Drawing.Point(175, 91);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 25);
@@ -270,7 +273,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(145, 218);
+            this.label3.Location = new System.Drawing.Point(145, 130);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(137, 25);
@@ -281,7 +284,7 @@
             // 
             this.AnzahlAchsenLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AnzahlAchsenLabel.AutoSize = true;
-            this.AnzahlAchsenLabel.Location = new System.Drawing.Point(144, 482);
+            this.AnzahlAchsenLabel.Location = new System.Drawing.Point(144, 296);
             this.AnzahlAchsenLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.AnzahlAchsenLabel.Name = "AnzahlAchsenLabel";
             this.AnzahlAchsenLabel.Size = new System.Drawing.Size(138, 25);
@@ -291,7 +294,7 @@
             // HubTextBox
             // 
             this.HubTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.HubTextBox.Location = new System.Drawing.Point(542, 545);
+            this.HubTextBox.Location = new System.Drawing.Point(542, 336);
             this.HubTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.HubTextBox.Name = "HubTextBox";
             this.HubTextBox.Size = new System.Drawing.Size(196, 31);
@@ -300,7 +303,7 @@
             // LeistungTextBox
             // 
             this.LeistungTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LeistungTextBox.Location = new System.Drawing.Point(542, 607);
+            this.LeistungTextBox.Location = new System.Drawing.Point(542, 379);
             this.LeistungTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.LeistungTextBox.Name = "LeistungTextBox";
             this.LeistungTextBox.Size = new System.Drawing.Size(196, 31);
@@ -310,7 +313,7 @@
             // 
             this.LeistungLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LeistungLabel.AutoSize = true;
-            this.LeistungLabel.Location = new System.Drawing.Point(166, 610);
+            this.LeistungLabel.Location = new System.Drawing.Point(166, 382);
             this.LeistungLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.LeistungLabel.Name = "LeistungLabel";
             this.LeistungLabel.Size = new System.Drawing.Size(94, 25);
@@ -321,7 +324,7 @@
             // 
             this.SchadstoffKlasseLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SchadstoffKlasseLabel.AutoSize = true;
-            this.SchadstoffKlasseLabel.Location = new System.Drawing.Point(125, 660);
+            this.SchadstoffKlasseLabel.Location = new System.Drawing.Point(125, 425);
             this.SchadstoffKlasseLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.SchadstoffKlasseLabel.Name = "SchadstoffKlasseLabel";
             this.SchadstoffKlasseLabel.Size = new System.Drawing.Size(176, 25);
@@ -382,5 +385,6 @@
         private System.Windows.Forms.Label LeistungLabel;
         private System.Windows.Forms.TextBox SchadstoffKlasseText;
         private System.Windows.Forms.Label SchadstoffKlasseLabel;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

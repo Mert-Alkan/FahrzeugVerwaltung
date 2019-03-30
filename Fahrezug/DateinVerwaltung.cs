@@ -23,10 +23,9 @@ namespace Fahrzeug
             };
             try
             {
-                
                 BinaryFormatter formatter = new BinaryFormatter();
                 formatter.Serialize(stream, fahrzeugpool.MeineFahrzeugListe);
-                
+
             }
             catch (IOException e)
             {
@@ -44,7 +43,7 @@ namespace Fahrzeug
             {
                 BinaryFormatter Formatter = new BinaryFormatter();
                 fahrzeugpool.MeineFahrzeugListe = (List<Fahrzeug>)Formatter.Deserialize(stream);
-             
+
                 foreach (Fahrzeug fahrzeug in fahrzeugpool.MeineFahrzeugListe)
                 {
                     tmpList.Add(fahrzeug);
@@ -56,8 +55,6 @@ namespace Fahrzeug
             }
             stream.Close();
             return tmpList;
-         
         }
-
     }
 }
