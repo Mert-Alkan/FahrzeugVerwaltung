@@ -57,6 +57,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Fahrzeuge = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
@@ -81,6 +85,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.Fahrzeuge.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -360,6 +365,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button3);
+            this.tabPage1.Controls.Add(this.textBox7);
+            this.tabPage1.Controls.Add(this.label14);
+            this.tabPage1.Controls.Add(this.textBox6);
+            this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button1);
@@ -395,6 +405,38 @@
             this.tabPage1.Text = "Fahrzeuge";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.TabPage1_Click);
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(1108, 495);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(196, 31);
+            this.textBox7.TabIndex = 33;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(983, 495);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(102, 25);
+            this.label14.TabIndex = 32;
+            this.label14.Text = "Parkplatz";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(1108, 448);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(196, 31);
+            this.textBox6.TabIndex = 31;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(974, 448);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(103, 25);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Parkhaus";
             // 
             // tabPage2
             // 
@@ -627,6 +669,16 @@
             this.listBox1.Size = new System.Drawing.Size(388, 329);
             this.listBox1.TabIndex = 0;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(83, 716);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(109, 40);
+            this.button3.TabIndex = 34;
+            this.button3.Text = "Spiel";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.SpielButton);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -703,6 +755,11 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button3;
     }
 }
 

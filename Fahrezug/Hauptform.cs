@@ -36,7 +36,6 @@ namespace Fahrzeug
             {
                 FahrzeugListBox.Items.Add(f);                       //fügt die Daten von f in die listbox ein
             }
-
         }
 
         //ruft form 2 auf und fügt die Datein in die FahrzeuglistBox
@@ -57,6 +56,8 @@ namespace Fahrzeug
                 AchsenTextBox.Text =Convert.ToString(LKW.MeineAchsen);
                 ZuladungTextBox.Text = Convert.ToString(LKW.MeineZuladung);
                 SteuertextBox.Text = Convert.ToString(LKW.Steuerschuld);
+                textBox6.Text = LKW.MeinParkhaus;
+                textBox7.Text = Convert.ToString(LKW.MeineParkplatz);
             }
             if (FahrzeugListBox.SelectedItem != null && FahrzeugListBox.SelectedItem is PKW)
             {
@@ -73,6 +74,8 @@ namespace Fahrzeug
                 Leistungstext.Text = Convert.ToString(PKW.MeineLeistung);
                 SchadstoffklasseTextBox.Text = Convert.ToString(PKW.MeineSchadStoffKlasse);
                 SteuertextBox.Text = Convert.ToString(PKW.Steuerschuld);
+                textBox6.Text = PKW.MeinParkhaus;
+                textBox7.Text = Convert.ToString(PKW.MeineParkplatz);
             }
             if (FahrzeugListBox.SelectedItem != null && FahrzeugListBox.SelectedItem is Motorräder)
             {
@@ -88,7 +91,8 @@ namespace Fahrzeug
                 textBox4.Text = Convert.ToString(motorräder.MeineErstzulassung);
                 HubText.Text = Convert.ToString(motorräder.MeineHubraume);
                 SteuertextBox.Text = Convert.ToString(motorräder.Steuerschuld);
-
+                textBox6.Text = motorräder.MeinParkhaus;
+                textBox7.Text = Convert.ToString(motorräder.MeineParkplatz);
             }
         }
         // Es wird programmiert was passiert, wenn man auf den LöschButton klickt 
@@ -107,14 +111,17 @@ namespace Fahrzeug
             HubText.Clear();
             SchadstoffklasseTextBox.Clear();
             Leistungstext.Clear();
-            AchsenTextBox.Clear();
+            AchsenTextBox.Clear();  
             SteuertextBox.Clear();
             ZuladungTextBox.Clear();
+            textBox6.Clear();
+            textBox7.Clear();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            HinzufügenStandardFahrzeuge();
+
             FahrzeugBeispiell();
+         //   HinzufügenStandardFahrzeuge(); ist auskommentiert, weil die methode nur einmal aufgerufen werden soll. Damit die Beispiel daten nicht immer erneut geladen und gespeichert werden
         }
         // Es wird Programmiert was passiert wenn man auf den Bearbeiten Button drückt  //geht nicht mehr 
         private void Bearbeiten_Button(object sender, EventArgs e)
@@ -137,15 +144,14 @@ namespace Fahrzeug
                 form3.ShowDialog();
             }
         }
-        private void Berechne_Steuerschuld(object sender, EventArgs e)
+        private void Berechne_Steuerschuld(object sender, EventArgs e)  //hilfe von Mikail
         {
-            foreach (Fahrzeug f in fahrzeugpool.MeineFahrzeugListe)
+            foreach (Fahrzeug f in fahrzeugpool.MeineFahrzeugListe)  //für jedes fahrzeug soll er die steuerschul berechnen von der liste meinefarhzeugliste
             {
                 tmpSteuer += f.Steuerschuld;
             }
             MessageBox.Show(tmpSteuer.ToString(), "Steuerschuld für Alle Fahrzeuge", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
         private void FahrzeugHinzufügen_Button_Click(object sender, EventArgs e)
         {         
             FahrzeugListBox.Items.Add(fahrzeugpool.Fahrzeug_Hinzufügen1());
@@ -247,9 +253,12 @@ namespace Fahrzeug
                 fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinHersteller = "VW";
                 fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinKennzeichen = "K-GS-01";
                 fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinModell = "Käfer";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinParkhaus = "1";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeineParkplatz = 100;
                 ((PKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeinHubraum = 1000;
                 ((PKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeineLeistung = 30;
                 ((PKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeineSchadStoffKlasse = 1;
+                 
                 fahrzeug = new PKW();
                 fahrzeugpool.MeineFahrzeugListe.Add(fahrzeug);
                 fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinFahrzeug = "PKW";
@@ -258,6 +267,8 @@ namespace Fahrzeug
                 fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinHersteller = "Opel";
                 fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinKennzeichen = "K-GS-02";
                 fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinModell = "Kadett";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinParkhaus = "1";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeineParkplatz = 101;
                 ((PKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeinHubraum = 1600;
                 ((PKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeineLeistung = 60;
                 ((PKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeineSchadStoffKlasse = 2;
@@ -268,6 +279,8 @@ namespace Fahrzeug
                 fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinAnschaffungspreis = 6000;
                 fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeineErstzulassung = "1999";
                 fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinHersteller = "BMW";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinParkhaus = "1";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeineParkplatz = 200;
                 fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinKennzeichen = "K-GS-03";
                 fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinModell = "R1200r";
                 ((Motorräder)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeineHubraume = 1170;
@@ -278,6 +291,8 @@ namespace Fahrzeug
                 fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinAnschaffungspreis = 23000;
                 fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeineErstzulassung = "1960";
                 fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinHersteller = "Mercedes";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinParkhaus = "1";
+                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeineParkplatz = 300;
                 fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinKennzeichen = "K-GS-04";
                 fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinModell = "LG 315";
                 ((LKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeineZuladung = 5500;
@@ -300,6 +315,13 @@ namespace Fahrzeug
            textBox5.Text= String.Format("{0} | {1} | {2}", fahrzeugpool.MeineFahrzeugListe[comboBox1.SelectedIndex].MeinFahrzeug,
            fahrzeugpool.MeineFahrzeugListe[comboBox1.SelectedIndex].MeinHersteller, fahrzeugpool.MeineFahrzeugListe[comboBox1.SelectedIndex].MeinModell);
            comboBox1.SelectedIndex = -1;
+        }
+
+        private void SpielButton(object sender, EventArgs e)
+        {
+            Form5 form5 = new Form5();
+            form5.ShowDialog();
+            
         }
     }
 }

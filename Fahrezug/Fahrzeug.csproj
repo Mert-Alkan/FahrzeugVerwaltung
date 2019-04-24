@@ -56,23 +56,29 @@
     <Compile Include="DateinVerwaltung.cs" />
     <Compile Include="Fahrzeug.cs" />
     <Compile Include="Fahrzeugpool.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Hauptform.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Hauptform.Designer.cs">
+      <DependentUpon>Hauptform.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="FahrzeugHinzufügen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="FahrzeugHinzufügen.Designer.cs">
+      <DependentUpon>FahrzeugHinzufügen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="Suche.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="Suche.Designer.cs">
+      <DependentUpon>Suche.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TicTacToe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicTacToe.Designer.cs">
+      <DependentUpon>TicTacToe.cs</DependentUpon>
     </Compile>
     <Compile Include="LKW.cs" />
     <Compile Include="Motorräder.cs" />
@@ -81,14 +87,17 @@
     <Compile Include="PKW.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Hauptform.resx">
+      <DependentUpon>Hauptform.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="FahrzeugHinzufügen.resx">
+      <DependentUpon>FahrzeugHinzufügen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="Suche.resx">
+      <DependentUpon>Suche.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicTacToe.resx">
+      <DependentUpon>TicTacToe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -15,14 +15,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Fahrzeug.PKW">
-    <Position X="1.5" Y="7.25" Width="1.5" />
+    <Position X="1.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABAAAACAAAIAAEAIAAAgAAAAAEAAAAAA=</HashCode>
       <FileName>PKW.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Fahrzeug.Fahrzeug">
-    <Position X="3.25" Y="1.25" Width="1.5" />
+    <Position X="3" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAQAAgAAAgBAgABAGAAABQEIAEwAAAABAAg=</HashCode>
       <FileName>Fahrzeug.cs</FileName>
@@ -30,13 +30,13 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Fahrzeug.Motorräder">
-    <Position X="3.75" Y="7.75" Width="1.5" />
-    <InheritanceLine Type="Fahrzeug.Fahrzeug" FixedToPoint="true">
+    <Position X="3.25" Y="5.5" Width="1.5" />
+    <InheritanceLine Type="Fahrzeug.Fahrzeug" ManuallyRouted="true" FixedToPoint="true">
       <Path>
-        <Point X="4" Y="5.882" />
-        <Point X="4" Y="6.875" />
-        <Point X="4.375" Y="6.875" />
-        <Point X="4.375" Y="7.75" />
+        <Point X="3.75" Y="5.132" />
+        <Point X="3.75" Y="5.324" />
+        <Point X="3.875" Y="5.324" />
+        <Point X="3.875" Y="5.5" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -66,7 +66,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Fahrzeug.LKW">
-    <Position X="5.75" Y="7.25" Width="1.5" />
+    <Position X="5.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAEABQAAAAAIAAAAAAAAA=</HashCode>
       <FileName>LKW.cs</FileName>

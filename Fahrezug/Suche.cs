@@ -29,24 +29,24 @@ namespace Fahrzeug
 
         private void Suchen_Klick(object sender, EventArgs e)
         {
-           
             listBox1.SelectedItems.Clear();
-           
-            for (int i = listBox1.Items.Count -1; i >= 0;i-- )
+
+            for (int i = listBox1.Items.Count - 1; i >= 0; i--)
             {
                 if (Fahrzeugpool.MeineFahrzeugListe[i].MeinKennzeichen.ToString().ToLower().Contains(SuchtextBox.Text.ToLower()))
                 {
                     listBox1.SetSelected(i, true);
                 }
             }
-            label2.Text = listBox1.SelectedItems.Count.ToString()+ "Kennzeichen wurde gefunden";
+            label2.Text = listBox1.SelectedItems.Count.ToString() + "Kennzeichen wurde gefunden";
         }
 
         private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-        
+          //  Form4 form4 = new Form4();
+          //  form4.ShowDialog();
+           
         }
-
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
 

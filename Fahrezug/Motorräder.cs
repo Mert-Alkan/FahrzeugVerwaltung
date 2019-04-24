@@ -10,7 +10,7 @@ namespace Fahrzeug
     {
         private int Hubraum;
 
-        public override float Steuerschuld => (float)(Hubraum + 99) / 100 * 20;    //(Hubraum+99) / 100 * 20 Euro  von Mikail 
+        public override float Steuerschuld => (float)(Hubraum + 99) / 100 * 20;   
 
         public int MeineHubraume 
         {

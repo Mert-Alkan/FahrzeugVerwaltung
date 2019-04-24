@@ -77,7 +77,7 @@ namespace Fahrzeug
 
         public void Hinzufügen_Click(object sender, EventArgs e)
         {
-                if (Hersteller.Text != "" && Fahrzeugcmbbx.Text == "PKW" && KennzeichenTextBox.Text != "" && AnschaffungspreisTextBox.Text != "" && ErstzulassungTextBox.Text !="" )
+                if (Hersteller.Text != "" && Fahrzeugcmbbx.Text == "PKW" && KennzeichenTextBox.Text != "" && AnschaffungspreisTextBox.Text != "" && ErstzulassungTextBox.Text !=""&&Parkhaustext.Text!="" && ParkplatzText.Text!="" )
                 {
                 PKW pKW = new PKW();
                 Fahrzeug1 = pKW;
@@ -86,15 +86,17 @@ namespace Fahrzeug
                     pKW.MeinHersteller = HerstellerTextBox.Text;
                     pKW.MeineErstzulassung = ErstzulassungTextBox.Text;
                     pKW.MeinFahrzeug = Fahrzeugcmbbx.Text;
+                    pKW.MeinParkhaus = Parkhaustext.Text;
                 try
                 {
+                    pKW.MeineParkplatz = Convert.ToInt32(ParkplatzText.Text);
                     pKW.MeineSchadStoffKlasse = Convert.ToInt32(SchadstoffKlasseText.Text);
                     pKW.MeinHubraum = Convert.ToInt32(HubTextBox.Text);
                     pKW.MeineLeistung = Convert.ToInt32(LeistungTextBox.Text);
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Sie müssen Zahlen eventuell eingeben");
+                    MessageBox.Show("Sie müssen Zahlen eventuell eingeben z.B Parkplatz");
 
                     return; throw;
                 }
@@ -109,15 +111,17 @@ namespace Fahrzeug
                    lKW.MeinHersteller = HerstellerTextBox.Text;
                    lKW.MeineErstzulassung = ErstzulassungTextBox.Text;
                    lKW.MeinFahrzeug = Fahrzeugcmbbx.Text;
+                   lKW.MeinParkhaus = Parkhaustext.Text;
                 try
                 {
+                    lKW.MeineParkplatz = Convert.ToInt32(ParkplatzText.Text);
                     lKW.MeineZuladung =Convert.ToInt32(txtZuladung.Text);
                     lKW.MeineAchsen = AchsenAnzahlTextBox.Text;
                     lKW.MeinAnschaffungspreis = Convert.ToInt32(AnschaffungspreisTextBox.Text);
                 }
                 catch (Exception)
                 {
-                     MessageBox.Show("Sie müssen Zahlen eingeben bei den Achsen, beim Anschaffungpreis und der Zuladung Zahlen Angeben");
+                     MessageBox.Show("Sie müssen Zahlen eingeben bei den Achsen, beim Anschaffungpreis und der Zuladung Zahlen Angeben und beim parkplatz auch");
                      return;  throw;
                 }
                     
@@ -131,16 +135,17 @@ namespace Fahrzeug
                     motorräder.MeinHersteller = HerstellerTextBox.Text;
                     motorräder.MeineErstzulassung = ErstzulassungTextBox.Text;
                     motorräder.MeinFahrzeug = Fahrzeugcmbbx.Text;
-                   
+                    motorräder.MeinParkhaus = Parkhaustext.Text;
 
                 try
                 {
+                    motorräder.MeineParkplatz = Convert.ToInt32(ParkplatzText.Text);
                     motorräder.MeineHubraume = Convert.ToInt32(HubTextBox.Text);
                     motorräder.MeinAnschaffungspreis = Convert.ToInt32(AnschaffungspreisTextBox.Text);
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Sie dürfen nur Zahlen im dem text Feld Hubraum angeben und im Feld Anschaffungspreis");
+                    MessageBox.Show("Sie dürfen nur Zahlen im dem text Feld Hubraum,parkplatz und im Feld Anschaffungspreis angeben");
                     return; throw;
                 }
                 }
@@ -180,6 +185,11 @@ namespace Fahrzeug
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ParkplatzText_TextChanged(object sender, EventArgs e)
         {
 
         }
