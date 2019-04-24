@@ -22,8 +22,8 @@ namespace Fahrzeug
             GespeicherteFahrzeugeLaden();                       //Startet die methode 
 
             #region Parkhaus-Tab
-            dataGridView1.DataSource = Parkpool.parkhaus;
-            cmParkhaus = (CurrencyManager)dataGridView1.BindingContext[Parkpool.parkhaus];
+            dataGridViewParkhäuser.DataSource = Parkpool.parkhaus;
+            cmParkhaus = (CurrencyManager)dataGridViewParkhäuser.BindingContext[Parkpool.parkhaus];
             #endregion
 
         }
@@ -212,6 +212,7 @@ namespace Fahrzeug
             Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].Postleitzahl= PlzTextBox.Text;
             //Fügt die Stellplätze in die List hinzu
             Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].FüllenListPKW(Convert.ToInt32(msdPKW.Text));
+
             AdresseTextBox.Clear();
             OrttxtBox.Clear();
             PlzTextBox.Clear();
@@ -310,12 +311,6 @@ namespace Fahrzeug
 
         }
 
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           textBox5.Text= String.Format("{0} | {1} | {2}", fahrzeugpool.MeineFahrzeugListe[comboBox1.SelectedIndex].MeinFahrzeug,
-           fahrzeugpool.MeineFahrzeugListe[comboBox1.SelectedIndex].MeinHersteller, fahrzeugpool.MeineFahrzeugListe[comboBox1.SelectedIndex].MeinModell);
-           comboBox1.SelectedIndex = -1;
-        }
 
         private void SpielButton(object sender, EventArgs e)
         {

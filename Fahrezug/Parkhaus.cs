@@ -16,14 +16,14 @@ namespace Fahrzeug
         private string sOrt;
         private string Plz;
 
-        public  string Postleitzahl
+        public string Postleitzahl
         {
             get { return Plz; }
             set { Plz = value; }
         }
 
 
-        public string  Ort
+        public string Ort
         {
             get { return sOrt; }
             set { sOrt = value; }
@@ -43,13 +43,14 @@ namespace Fahrzeug
             Plz = plz;
         }
 
-     //Mikail
+        //Mikail
         public void FüllenListPKW(int pkw)
         {
             for (int i = 0; i < pkw; i++)
             {
-               listStellplätzePKW.Add(pkw);
+                listStellplätzePKW.Add(pkw);
             }
+
         }
         public void FüllenListLKW(int lkw)
         {

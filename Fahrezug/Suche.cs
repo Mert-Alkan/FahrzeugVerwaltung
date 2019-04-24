@@ -13,6 +13,9 @@ namespace Fahrzeug
     public partial class Form3 : Form
     {
         Fahrzeugpool Fahrzeugpool = new Fahrzeugpool();
+        List<int> Ergebnisse = new List<int>();
+        int ausgewähltesFahrzeug;
+
         public Form3()
         {
             //Die daten der liste werden in die listbox hinzugefügt
@@ -31,14 +34,7 @@ namespace Fahrzeug
         {
             listBox1.SelectedItems.Clear();
 
-            for (int i = listBox1.Items.Count - 1; i >= 0; i--)
-            {
-                if (Fahrzeugpool.MeineFahrzeugListe[i].MeinKennzeichen.ToString().ToLower().Contains(SuchtextBox.Text.ToLower()))
-                {
-                    listBox1.SetSelected(i, true);
-                }
-            }
-            label2.Text = listBox1.SelectedItems.Count.ToString() + "Kennzeichen wurde gefunden";
+
         }
 
         private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,7 +45,51 @@ namespace Fahrzeug
         }
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
+            Ergebnisse.Clear();
+            for (int i = 0; i < listBox1.Items.Count - 1; i++)
+            {
+                if (Fahrzeugpool.MeineFahrzeugListe[i].MeinKennzeichen.ToString().ToLower().Contains(SuchtextBox.Text.ToLower()))
+                {
+                    Ergebnisse.Add(i);
+                }
+                
+            }
+            if (Ergebnisse.Count != -1)
+            {
+                try
+                {
+                    listBox1.SelectedIndex = Ergebnisse[0];
+                    ausgewähltesFahrzeug = 0;
+                }
+                catch (Exception)
+                {
+                }
 
+            }
+            label2.Text = Ergebnisse.Count + "Kennzeichen wurde gefunden";
+        }
+
+        private void Form3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    if (ausgewähltesFahrzeug >= Ergebnisse.Count - 1)
+                    {
+                        ausgewähltesFahrzeug = 0;
+                        listBox1.SelectedIndex = Ergebnisse[ausgewähltesFahrzeug];
+                    }
+                    else
+                    {
+                        listBox1.SelectedIndex = Ergebnisse[ausgewähltesFahrzeug + 1];
+                        ausgewähltesFahrzeug++;
+                    }
+                }
+                catch (Exception)
+                {
+                }
+            }
         }
     }
 }
