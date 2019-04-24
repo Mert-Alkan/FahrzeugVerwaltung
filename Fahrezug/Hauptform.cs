@@ -153,8 +153,20 @@ namespace Fahrzeug
             MessageBox.Show(tmpSteuer.ToString(), "Steuerschuld für Alle Fahrzeuge", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void FahrzeugHinzufügen_Button_Click(object sender, EventArgs e)
-        {         
-            FahrzeugListBox.Items.Add(fahrzeugpool.Fahrzeug_Hinzufügen1());
+        {
+            //TODO Fehler abfangen
+            try
+            {
+                FahrzeugListBox.Items.Add(fahrzeugpool.Fahrzeug_Hinzufügen1(Parkpool.parkhaus));
+                DateinVerwaltung dateinVerwaltung = new DateinVerwaltung();
+                dateinVerwaltung.Speichern();
+            }
+            catch (Exception)
+            {
+
+
+            }
+
         }
 
         private void BtnParkhausHinzufügen_Button_Click(object sender, EventArgs e)

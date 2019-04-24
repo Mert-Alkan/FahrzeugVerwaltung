@@ -13,9 +13,11 @@ namespace Fahrzeug
     public partial class Form2 : Form
     {
         public Fahrzeug Fahrzeug1;
-        public Form2()
+        List<Parkhaus> parkhäuser;
+        public Form2(List<Parkhaus> parks)
         {
-            InitializeComponent();   
+            InitializeComponent();
+            parkhäuser = parks;
         }
         //Eigenschfaten für die Klassen wurden hinzugefügt
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -161,7 +163,18 @@ namespace Fahrzeug
         private void Form2_Load(object sender, EventArgs e)
         {
             Füllenundleeren();
+
+
             
+            for (int i = 0; i < parkhäuser.Count; i++)
+            {
+                Parkhaustext.Items.Add(parkhäuser[i].Adresse);
+            }
+            if (parkhäuser.Count != -1)
+            {
+                Parkhaustext.SelectedIndex = 0;
+            }
+
         }
 
         void Füllenundleeren()

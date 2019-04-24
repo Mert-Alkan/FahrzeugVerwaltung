@@ -53,7 +53,7 @@
             this.SchadstoffKlasseLabel = new System.Windows.Forms.Label();
             this.ParkplatzText = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.Parkhaustext = new System.Windows.Forms.TextBox();
+            this.Parkhaustext = new System.Windows.Forms.ComboBox();
             this.Parkhauslabel = new System.Windows.Forms.Label();
             this.Hinzufügen = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -108,7 +108,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 19F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 6F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(427, 280);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(427, 281);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel1_Paint);
             // 
@@ -349,10 +349,11 @@
             // Parkhaustext
             // 
             this.Parkhaustext.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Parkhaustext.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Parkhaustext.Location = new System.Drawing.Point(271, 300);
             this.Parkhaustext.Margin = new System.Windows.Forms.Padding(2);
             this.Parkhaustext.Name = "Parkhaustext";
-            this.Parkhaustext.Size = new System.Drawing.Size(98, 20);
+            this.Parkhaustext.Size = new System.Drawing.Size(98, 21);
             this.Parkhaustext.TabIndex = 16;
             // 
             // Parkhauslabel
@@ -380,7 +381,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 472);
+            this.ClientSize = new System.Drawing.Size(642, 438);
             this.Controls.Add(this.Hinzufügen);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form2";
@@ -421,7 +422,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TextBox ParkplatzText;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox Parkhaustext;
         private System.Windows.Forms.Label Parkhauslabel;
+        private System.Windows.Forms.ComboBox Parkhaustext;
     }
 }

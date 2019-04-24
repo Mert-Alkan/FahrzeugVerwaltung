@@ -22,7 +22,7 @@ namespace Fahrzeug
             InitializeComponent();
             listBox1.DataSource = Fahrzeugpool.MeineFahrzeugListe;
             listBox1.DisplayMember = "MeinKennzeichen";
-            Form2 form2 = new Form2();
+
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace Fahrzeug
             {
                 try
                 {
-                    listBox1.SelectedIndex = Ergebnisse[0];
+                    listBox1.SelectedIndex = Ergebnisse[0];         //Wählt das erste suchergebniss aus
                     ausgewähltesFahrzeug = 0;
                 }
                 catch (Exception)
@@ -66,19 +66,20 @@ namespace Fahrzeug
                 }
 
             }
-            label2.Text = Ergebnisse.Count + "Kennzeichen wurde gefunden";
+            label2.Text = Ergebnisse.Count + " Kennzeichen wurde gefunden";
         }
 
         private void Form3_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            // Wird beim drücken der enter taste ausgeführt
+            if(e.KeyCode == Keys.Enter)                              
             {
                 try
                 {
                     if (ausgewähltesFahrzeug >= Ergebnisse.Count - 1)
                     {
                         ausgewähltesFahrzeug = 0;
-                        listBox1.SelectedIndex = Ergebnisse[ausgewähltesFahrzeug];
+                        listBox1.SelectedIndex = Ergebnisse[ausgewähltesFahrzeug];          // Wählt das erste Ergebnis an falls das letzte schon angewählt war
                     }
                     else
                     {
