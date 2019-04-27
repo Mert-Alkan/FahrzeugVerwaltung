@@ -377,14 +377,14 @@
             this.Hinzufügen.UseVisualStyleBackColor = true;
             this.Hinzufügen.Click += new System.EventHandler(this.Hinzufügen_Click);
             // 
-            // Form2
+            // FahrzeugHinzufügen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(642, 438);
             this.Controls.Add(this.Hinzufügen);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Form2";
+            this.Name = "FahrzeugHinzufügen";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

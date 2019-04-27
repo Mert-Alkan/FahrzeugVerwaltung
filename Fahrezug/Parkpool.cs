@@ -15,25 +15,28 @@ namespace Fahrzeug
         {
             
         }
+
         public void FahrzeugZuweisung()
         {
             throw new System.NotImplementedException();
         }
-        public Parkhaus Parkhaus_Hinzufügen1()
+
+        public void ParkhäuserLaden()
         {
-            Hauptform form1 = new Hauptform();
-            if (form1.Parkhaus1 != null)  
-            {
-                parkhaus.Add(form1.Parkhaus1);
-            }
-            try
-            {
-              return form1.Parkhaus1;
-            }
-            catch (Exception)
-            {
-               return null;
-            }
+            DateinVerwaltung dateinVerwaltung = new DateinVerwaltung();
+
+            parkhaus = dateinVerwaltung.ParkhäuserLaden();
+        }
+        public void NeuesParkhaus(string adresse, string ort, string plz, string msdPKW, string msdLKW, string msdMotorrad)
+        {
+            parkhaus.Add(new Parkhaus());
+            parkhaus[parkhaus.Count - 1].Adresse = adresse;
+            parkhaus[parkhaus.Count - 1].Ort = ort;
+            parkhaus[parkhaus.Count - 1].Postleitzahl = plz;
+            //Fügt die Stellplätze in die List hinzu
+            parkhaus[parkhaus.Count - 1].FüllenListPKW(Convert.ToInt32(msdPKW));
+            parkhaus[parkhaus.Count - 1].FüllenListLKW(Convert.ToInt32(msdLKW));
+            parkhaus[parkhaus.Count - 1].FüllenListMotorrad(Convert.ToInt32(msdMotorrad));
         }
     }
 }

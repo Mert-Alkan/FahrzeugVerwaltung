@@ -116,8 +116,8 @@ namespace Fahrzeug
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            fahrzeugpool.MeineFahrzeugListe = dateinVerwaltung.FahrzeugeLaden();
-            Parkpool.parkhaus = dateinVerwaltung.ParkhäuserLaden();
+            fahrzeugpool.FahrzeugeLaden();
+            Parkpool.ParkhäuserLaden();
 
             #region Parkhaus-Tab
             dataGridViewParkhäuser.DataSource = Parkpool.parkhaus;
@@ -173,12 +173,7 @@ namespace Fahrzeug
 
         }
 
-        private void BtnParkhausHinzufügen_Button_Click(object sender, EventArgs e)
-        {
 
-            FahrzeugListBox.Items.Add(Parkpool.Parkhaus_Hinzufügen1());
-
-        }
 
         private void Label5_Click(object sender, EventArgs e)
         {
@@ -223,14 +218,9 @@ namespace Fahrzeug
         }
         private void HinzufügeButton(object sender, EventArgs e)
         {
-            Parkpool.parkhaus.Add(new Parkhaus());
-            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].Adresse= AdresseTextBox.Text;
-            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].Ort= OrttxtBox.Text;
-            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].Postleitzahl= PlzTextBox.Text;
-            //Fügt die Stellplätze in die List hinzu
-            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].FüllenListPKW(Convert.ToInt32(msdPKW.Text));
-            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].FüllenListLKW(Convert.ToInt32(msdLKW.Text));
-            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].FüllenListMotorrad(Convert.ToInt32(msdMotorrad.Text));
+            Parkpool.NeuesParkhaus(AdresseTextBox.Text, OrttxtBox.Text, PlzTextBox.Text,
+                msdPKW.Text, msdLKW.Text, msdMotorrad.Text);
+
 
             AdresseTextBox.Clear();
             OrttxtBox.Clear();

@@ -36,9 +36,17 @@ namespace Fahrzeug
                 }
             }
         }
+
         public void Steuerschuld()
         {
             throw new System.NotImplementedException();
+        }
+
+        public void FahrzeugeLaden()
+        {
+            DateinVerwaltung dateinVerwaltung = new DateinVerwaltung();
+
+            MeineFahrzeugListe = dateinVerwaltung.FahrzeugeLaden();
         }
     }
 }
