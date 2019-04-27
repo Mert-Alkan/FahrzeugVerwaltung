@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Fahrzeug
 {
-    public partial class Form1 : Form
+    public partial class Hauptform : Form
     {
 
         public Parkpool Parkpool = new Parkpool();
@@ -15,7 +15,7 @@ namespace Fahrzeug
         float tmpSteuer;
         CurrencyManager cmParkhaus;
 
-        public Form1()
+        public Hauptform()
         {
             InitializeComponent();
             FahrzeugListBox.DisplayMember = "MeinKennzeichen";  //Diese Eigenschaft  soll in der fahrzeug liste angezigt werden
@@ -143,9 +143,9 @@ namespace Fahrzeug
 
         private void Suchen_Klick(object sender, EventArgs e)
         {
-            using (Form3 form3 = new Form3())
+            using (Suche suche = new Suche())
             {
-                form3.ShowDialog();
+                suche.ShowDialog();
             }
         }
         private void Berechne_Steuerschuld(object sender, EventArgs e)  //hilfe von Mikail
@@ -334,8 +334,8 @@ namespace Fahrzeug
 
         private void SpielButton(object sender, EventArgs e)
         {
-            Form5 form5 = new Form5();
-            form5.ShowDialog();
+            TicTacToe5 tictactoe = new TicTacToe5();
+            tictactoe.ShowDialog();
             
         }
     }

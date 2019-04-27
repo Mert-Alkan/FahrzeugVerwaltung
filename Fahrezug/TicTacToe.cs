@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Fahrzeug
 {
-    public partial class Form5 : Form
+    public partial class TicTacToe5 : Form
     {
         bool turn = true;
         int turn_count = 0;
-        public Form5()
+        public TicTacToe5()
         {
             InitializeComponent();
         }

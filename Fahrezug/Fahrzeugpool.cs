@@ -19,7 +19,7 @@ namespace Fahrzeug
 
         public Fahrzeug Fahrzeug_Hinzufügen1(List<Parkhaus> parkhäuser)
         {
-            using (Form2 form2 = new Form2(parkhäuser))
+            using (FahrzeugHinzufügen form2 = new FahrzeugHinzufügen(parkhäuser))
             {
                 form2.ShowDialog();
                 if (form2.Fahrzeug1 != null)  

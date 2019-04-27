@@ -50,6 +50,7 @@ namespace Fahrzeug
             {
                 MessageBox.Show(e.ToString());
             }
+            stream.Close();
         }
 
         public List<Fahrzeug> FahrzeugeLaden()
@@ -65,7 +66,7 @@ namespace Fahrzeug
             }
             catch (IOException e)
             {
-                MessageBox.Show(e.ToString());
+                Console.WriteLine(e.ToString());
             }
             stream.Close();
             return tmpList;
@@ -84,9 +85,9 @@ namespace Fahrzeug
                 tmpList = (List<Parkhaus>)Formatter.Deserialize(stream);
 
             }
-            catch (IOException e)
+            catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                Console.WriteLine(e.ToString());
             }
             stream.Close();
             return tmpList;

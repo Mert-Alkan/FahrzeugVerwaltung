@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Fahrzeug
 {
-    public partial class Form2 : Form
+    public partial class FahrzeugHinzufügen : Form
     {
         public Fahrzeug Fahrzeug1;
         List<Parkhaus> parkhäuser;
-        public Form2(List<Parkhaus> parks)
+        public FahrzeugHinzufügen(List<Parkhaus> parks)
         {
             InitializeComponent();
             parkhäuser = parks;

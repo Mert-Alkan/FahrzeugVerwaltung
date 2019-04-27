@@ -1,6 +1,6 @@
 ﻿namespace Fahrzeug
 {
-    partial class Form2
+    partial class FahrzeugHinzufügen
     {
         /// <summary>
         /// Required designer variable.

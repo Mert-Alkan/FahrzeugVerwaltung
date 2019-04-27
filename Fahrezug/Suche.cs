@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace Fahrzeug
 {
-    public partial class Form3 : Form
+    public partial class Suche : Form
     {
         Fahrzeugpool Fahrzeugpool = new Fahrzeugpool();
         List<int> Ergebnisse = new List<int>();
         int ausgewähltesFahrzeug;
 
-        public Form3()
+        public Suche()
         {
             //Die daten der liste werden in die listbox hinzugefügt
             InitializeComponent();

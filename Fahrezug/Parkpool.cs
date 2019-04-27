@@ -21,7 +21,7 @@ namespace Fahrzeug
         }
         public Parkhaus Parkhaus_Hinzufügen1()
         {
-            Form1 form1 = new Form1();
+            Hauptform form1 = new Hauptform();
             if (form1.Parkhaus1 != null)  
             {
                 parkhaus.Add(form1.Parkhaus1);

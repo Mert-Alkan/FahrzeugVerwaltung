@@ -1,6 +1,6 @@
 ﻿namespace Fahrzeug
 {
-    partial class Form3
+    partial class Suche
     {
         /// <summary>
         /// Required designer variable.

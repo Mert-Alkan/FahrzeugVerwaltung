@@ -1,6 +1,6 @@
 ﻿namespace Fahrzeug
 {
-    partial class Form5
+    partial class TicTacToe5
     {
         /// <summary>
         /// Required designer variable.
