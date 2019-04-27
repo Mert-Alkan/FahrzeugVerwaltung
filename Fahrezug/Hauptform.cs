@@ -224,13 +224,15 @@ namespace Fahrzeug
             Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].Postleitzahl= PlzTextBox.Text;
             //Fügt die Stellplätze in die List hinzu
             Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].FüllenListPKW(Convert.ToInt32(msdPKW.Text));
+            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].FüllenListLKW(Convert.ToInt32(msdLKW.Text));
+            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].FüllenListMotorrad(Convert.ToInt32(msdMotorrad.Text));
 
             AdresseTextBox.Clear();
             OrttxtBox.Clear();
             PlzTextBox.Clear();
             msdPKW.Clear();
-            maskedTextBox2.Clear();
-            maskedTextBox3.Clear();
+            msdLKW.Clear();
+            msdMotorrad.Clear();
             //damit die Daten angezeit werden
             cmParkhaus.Refresh();
         }

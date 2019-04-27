@@ -43,12 +43,28 @@ namespace Fahrzeug
             Plz = plz;
         }
 
+        public int ListStellPlätzePKW
+        {
+            get { return listStellplätzePKW.Count; }
+        }
+
+        public int ListStellPlätzeLKW
+        {
+            get { return listStellplätzeLKW.Count; }
+        }
+
+        public int ListStellPlätzeMotorrad
+        {
+            get { return listStellplätzeMotorrad.Count; }
+        }
+
         //Mikail
         public void FüllenListPKW(int pkw)
         {
             for (int i = 0; i < pkw; i++)
             {
-                listStellplätzePKW.Add(pkw);
+                listStellplätzePKW.Add(0);
+                Console.WriteLine("PKW: " + i);
             }
 
         }
@@ -56,15 +72,16 @@ namespace Fahrzeug
         {
             for (int i = 0; i < lkw; i++)
             {
-                listStellplätzePKW.Add(lkw);
-
+                listStellplätzeLKW.Add(0);
+                Console.WriteLine("LKW: " + i);
             }
         }
         public void FüllenListMotorrad(int motorrad)
         {
             for (int i = 0; i < motorrad; i++)
             {
-                listStellplätzePKW.Add(motorrad);
+                listStellplätzeMotorrad.Add(0);
+                Console.WriteLine("Motorrad: " + i);
             }
         }
     }
