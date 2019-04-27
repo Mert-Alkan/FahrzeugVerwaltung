@@ -12,9 +12,9 @@ namespace Fahrzeug
     [Serializable]
     public class DateinVerwaltung
     {
-        Fahrzeugpool fahrzeugpool = new Fahrzeugpool();
-        public void Speichern()
+        public void Speichern(List<Parkhaus> parkhäuser, List<Fahrzeug> fahrzeuge)
         {
+            //Speichert Fahrzeuge
             FileStream stream;
             File.Delete("FahrzeugChronik.bin");
             stream = new FileStream("FahrzeugChronik.bin", FileMode.OpenOrCreate)
@@ -24,7 +24,7 @@ namespace Fahrzeug
             try
             {
                 BinaryFormatter formatter = new BinaryFormatter();
-                formatter.Serialize(stream, fahrzeugpool.MeineFahrzeugListe);
+                formatter.Serialize(stream, fahrzeuge);
 
             }
             catch (IOException e)
@@ -32,8 +32,27 @@ namespace Fahrzeug
                 MessageBox.Show(e.ToString());
             }
             stream.Close();
+
+
+            //Speichert Parkhäuser
+            File.Delete("ParkhausChronik.bin");
+            stream = new FileStream("ParkhausChronik.bin", FileMode.OpenOrCreate)
+            {
+                Position = 0
+            };
+            try
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(stream, parkhäuser);
+
+            }
+            catch (IOException e)
+            {
+                MessageBox.Show(e.ToString());
+            }
         }
-        public List<Fahrzeug> Laden()
+
+        public List<Fahrzeug> FahrzeugeLaden()
         {
             List<Fahrzeug> tmpList = new List<Fahrzeug>();
             FileStream stream;
@@ -42,12 +61,7 @@ namespace Fahrzeug
             try
             {
                 BinaryFormatter Formatter = new BinaryFormatter();
-                fahrzeugpool.MeineFahrzeugListe = (List<Fahrzeug>)Formatter.Deserialize(stream);
-
-                foreach (Fahrzeug fahrzeug in fahrzeugpool.MeineFahrzeugListe)
-                {
-                    tmpList.Add(fahrzeug);
-                }
+                tmpList = (List<Fahrzeug>)Formatter.Deserialize(stream);
             }
             catch (IOException e)
             {
@@ -56,5 +70,27 @@ namespace Fahrzeug
             stream.Close();
             return tmpList;
         }
+
+
+        public List<Parkhaus> ParkhäuserLaden()
+        {
+            List<Parkhaus> tmpList = new List<Parkhaus>();
+            FileStream stream;
+
+            stream = new FileStream("ParkhausChronik.bin", FileMode.OpenOrCreate);
+            try
+            {
+                BinaryFormatter Formatter = new BinaryFormatter();
+                tmpList = (List<Parkhaus>)Formatter.Deserialize(stream);
+
+            }
+            catch (IOException e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            stream.Close();
+            return tmpList;
+        }
+
     }
 }

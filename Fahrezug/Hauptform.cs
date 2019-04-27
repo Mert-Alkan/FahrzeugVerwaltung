@@ -20,17 +20,13 @@ namespace Fahrzeug
             InitializeComponent();
             FahrzeugListBox.DisplayMember = "MeinKennzeichen";  //Diese Eigenschaft  soll in der fahrzeug liste angezigt werden
             GespeicherteFahrzeugeLaden();                       //Startet die methode 
-
-            #region Parkhaus-Tab
-            dataGridViewParkhäuser.DataSource = Parkpool.parkhaus;
-            cmParkhaus = (CurrencyManager)dataGridViewParkhäuser.BindingContext[Parkpool.parkhaus];
-            #endregion
+            //Parkpool.parkhaus = dateinVerwaltung.ParkhäuserLaden();
 
         }
 
         void GespeicherteFahrzeugeLaden()
         {
-            List<Fahrzeug> tmpList = dateinVerwaltung.Laden();          //holt die daten aus  der tmpliste 
+            List<Fahrzeug> tmpList = dateinVerwaltung.FahrzeugeLaden();          //holt die daten aus  der tmpliste 
 
             foreach (Fahrzeug f in tmpList)
             {
@@ -119,9 +115,17 @@ namespace Fahrzeug
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            //FahrzeugBeispiell();
+            fahrzeugpool.MeineFahrzeugListe = dateinVerwaltung.FahrzeugeLaden();
+            Parkpool.parkhaus = dateinVerwaltung.ParkhäuserLaden();
 
-            FahrzeugBeispiell();
-         //   HinzufügenStandardFahrzeuge(); ist auskommentiert, weil die methode nur einmal aufgerufen werden soll. Damit die Beispiel daten nicht immer erneut geladen und gespeichert werden
+            #region Parkhaus-Tab
+            dataGridViewParkhäuser.DataSource = Parkpool.parkhaus;
+            cmParkhaus = (CurrencyManager)dataGridViewParkhäuser.BindingContext[Parkpool.parkhaus];
+            #endregion
+
+
+            //   HinzufügenStandardFahrzeuge(); ist auskommentiert, weil die methode nur einmal aufgerufen werden soll. Damit die Beispiel daten nicht immer erneut geladen und gespeichert werden
         }
         // Es wird Programmiert was passiert wenn man auf den Bearbeiten Button drückt  //geht nicht mehr 
         private void Bearbeiten_Button(object sender, EventArgs e)
@@ -159,7 +163,7 @@ namespace Fahrzeug
             {
                 FahrzeugListBox.Items.Add(fahrzeugpool.Fahrzeug_Hinzufügen1(Parkpool.parkhaus));
                 DateinVerwaltung dateinVerwaltung = new DateinVerwaltung();
-                dateinVerwaltung.Speichern();
+                dateinVerwaltung.Speichern(Parkpool.parkhaus, fahrzeugpool.MeineFahrzeugListe);
             }
             catch (Exception)
             {
@@ -187,13 +191,14 @@ namespace Fahrzeug
         private void Speichern_Click(object sender, EventArgs e)
         {
             DateinVerwaltung dateinVerwaltung = new DateinVerwaltung();
-            dateinVerwaltung.Speichern();
+            dateinVerwaltung.Speichern(Parkpool.parkhaus, fahrzeugpool.MeineFahrzeugListe);
         }
 
         private void Laden_Click(object sender, EventArgs e)
         {
             DateinVerwaltung dateinVerwaltung = new DateinVerwaltung();
-            dateinVerwaltung.Laden();
+            dateinVerwaltung.FahrzeugeLaden();
+            dateinVerwaltung.ParkhäuserLaden();
         }
 
         private void Schließen_Click(object sender, EventArgs e)
@@ -204,7 +209,7 @@ namespace Fahrzeug
         private void Speichere_Click(object sender, EventArgs e)
         {
             DateinVerwaltung dateinVerwaltung = new DateinVerwaltung();
-            dateinVerwaltung.Speichern();
+            dateinVerwaltung.Speichern(Parkpool.parkhaus, fahrzeugpool.MeineFahrzeugListe);
         }
 
         private void Schließe_Click(object sender, EventArgs e)
@@ -235,6 +240,7 @@ namespace Fahrzeug
             msdMotorrad.Clear();
             //damit die Daten angezeit werden
             cmParkhaus.Refresh();
+            dateinVerwaltung.Speichern(Parkpool.parkhaus, fahrzeugpool.MeineFahrzeugListe);
         }
         private void TabPage2_Click(object sender, EventArgs e)
         {
