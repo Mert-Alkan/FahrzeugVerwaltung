@@ -64,7 +64,6 @@ namespace Fahrzeug
             for (int i = 0; i < pkw; i++)
             {
                 listStellplätzePKW.Add(0);
-                Console.WriteLine("PKW: " + i);
             }
 
         }
@@ -73,7 +72,6 @@ namespace Fahrzeug
             for (int i = 0; i < lkw; i++)
             {
                 listStellplätzeLKW.Add(0);
-                Console.WriteLine("LKW: " + i);
             }
         }
         public void FüllenListMotorrad(int motorrad)
@@ -81,7 +79,6 @@ namespace Fahrzeug
             for (int i = 0; i < motorrad; i++)
             {
                 listStellplätzeMotorrad.Add(0);
-                Console.WriteLine("Motorrad: " + i);
             }
         }
     }

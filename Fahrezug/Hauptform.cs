@@ -115,7 +115,7 @@ namespace Fahrzeug
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            //FahrzeugBeispiell();
+
             fahrzeugpool.MeineFahrzeugListe = dateinVerwaltung.FahrzeugeLaden();
             Parkpool.parkhaus = dateinVerwaltung.ParkhäuserLaden();
 
@@ -251,80 +251,7 @@ namespace Fahrzeug
         {
 
         }
-        void FahrzeugBeispiell()
-        {
-            //Parkhaus1(Ort, Plz, Straße): Köln, 51105, Westerwaldstr. 99
-            Parkpool.parkhaus.Add(new Parkhaus());
-            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].Ort = "Köln";
-            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].Postleitzahl = "51105";
-            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].Adresse= "Westerwaldstr. 99";
-            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].FüllenListPKW(98);
-            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].FüllenListLKW(98);
-            Parkpool.parkhaus[Parkpool.parkhaus.Count - 1].FüllenListMotorrad(98);
-        }
-        private void HinzufügenStandardFahrzeuge()
-        {
-                Fahrzeug fahrzeug;
-                 //PKWs
-                fahrzeug = new PKW();
-                fahrzeugpool.MeineFahrzeugListe.Add(fahrzeug);
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinFahrzeug = "PKW";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinAnschaffungspreis = 9999;
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeineErstzulassung = "1965";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinHersteller = "VW";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinKennzeichen = "K-GS-01";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinModell = "Käfer";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinParkhaus = "1";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeineParkplatz = 100;
-                ((PKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeinHubraum = 1000;
-                ((PKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeineLeistung = 30;
-                ((PKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeineSchadStoffKlasse = 1;
-                 
-                fahrzeug = new PKW();
-                fahrzeugpool.MeineFahrzeugListe.Add(fahrzeug);
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinFahrzeug = "PKW";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinAnschaffungspreis = 12000;
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeineErstzulassung = "1964";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinHersteller = "Opel";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinKennzeichen = "K-GS-02";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinModell = "Kadett";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinParkhaus = "1";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeineParkplatz = 101;
-                ((PKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeinHubraum = 1600;
-                ((PKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeineLeistung = 60;
-                ((PKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeineSchadStoffKlasse = 2;
-                //Motorrad
-                fahrzeug = new Motorräder();
-                fahrzeugpool.MeineFahrzeugListe.Add(fahrzeug);
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinFahrzeug = "Motorrad";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinAnschaffungspreis = 6000;
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeineErstzulassung = "1999";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinHersteller = "BMW";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinParkhaus = "1";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeineParkplatz = 200;
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinKennzeichen = "K-GS-03";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinModell = "R1200r";
-                ((Motorräder)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeineHubraume = 1170;
-                //LKW
-                fahrzeug = new LKW();
-                fahrzeugpool.MeineFahrzeugListe.Add(fahrzeug);
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinFahrzeug = "LKW";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinAnschaffungspreis = 23000;
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeineErstzulassung = "1960";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinHersteller = "Mercedes";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinParkhaus = "1";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeineParkplatz = 300;
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinKennzeichen = "K-GS-04";
-                fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1].MeinModell = "LG 315";
-                ((LKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeineZuladung = 5500;
-                ((LKW)fahrzeugpool.MeineFahrzeugListe[fahrzeugpool.MeineFahrzeugListe.Count - 1]).MeineAchsen = "2";
-
-                foreach (Fahrzeug f in fahrzeugpool.MeineFahrzeugListe)
-                {
-                    FahrzeugListBox.Items.Add(f);                       //fügt die Daten von f in die listbox ein
-                }
-               
-        }
+        
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
